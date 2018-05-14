@@ -280,13 +280,16 @@ for i in range(iterations):
 	_, dLoss = sess.run([trainerD, d_loss], feed_dict={z_placeholder:z_batch, x_placeholder:real_image_batch})
 	# Update the generator
 	_, gLoss = sess.run([trainerG, g_loss], feed_dict={z_placeholder:z_batch})
-	
+
 print("Training End")
 
-# # GAN in action!
+# # # GAN in action!
+
+tf.get_variable_scope().reuse_variables()
 
 sample_image = generator(z_placeholder, 1, z_dimensions)
 z_batch = np.random.normal(-1, 1, size=[1, z_dimensions])
 temp = (sess.run(sample_image, feed_dict={z_placeholder:z_batch}))
 my_i = temp.squeeze()
 plt.imshow(my_i, cmap='gray_r')
+plt.show()
