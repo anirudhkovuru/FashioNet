@@ -4,14 +4,31 @@ import random
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Artificial next batch function for our own input
+def next_batch(num, data):
+    idx = np.arange(0 , len(data))
+    np.random.shuffle(idx)
+    idx = idx[:num]
+    data_shuffle = [data[ i] for i in idx]
+    return np.asarray(data_shuffle)
+
 # Importing our MNIST images
 from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets("MNIST_data/")
 
-# Getting our MNIST images, will replace with our data and its parameters later
-x_train = mnist.train.images[:55000, :]
+# Getting our MNIST images and corresponding labels
+x_train = mnist.train.images
+x_train_labels = mnist.train.labels
 
+# To store a particular type of number
+images = []
 
+# Checking for number 8
+for i in range(55000):
+	if x_train_labels[i] == 8:
+		images.append(x_train[i])
+
+x_train = images
 
 # For showing dimensions of x_train
 
@@ -23,8 +40,6 @@ x_train = mnist.train.images[:55000, :]
 # image = x_train[randomNum].reshape([28, 28])
 # plt.imshow(image, cmap=plt.get_cmap('gray_r'))
 # plt.show()
-
-
 
 # # # Discriminator
 
@@ -271,11 +286,11 @@ print("exiting")
 
 print("Training Begin")
 sess.run(tf.global_variables_initializer())
-iterations = 3000
+iterations = 6000
 for i in range(iterations):
 	z_batch = np.random.normal(-1, 1, size=[batch_size, z_dimensions])
-	real_image_batch = mnist.train.next_batch(batch_size)
-	real_image_batch = np.reshape(real_image_batch[0], [batch_size, 28, 28, 1])
+	real_image_batch = next_batch(batch_size, x_train)
+	real_image_batch = np.reshape(real_image_batch, [batch_size, 28, 28, 1])
 	# Update the discriminator
 	_, dLoss = sess.run([trainerD, d_loss], feed_dict={z_placeholder:z_batch, x_placeholder:real_image_batch})
 	# Update the generator
