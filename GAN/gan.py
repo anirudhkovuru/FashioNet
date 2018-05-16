@@ -57,7 +57,8 @@ class GAN():
         # For the combined model we will only train the generator
         self.discriminator.trainable = False
 
-        # The discriminator takes generated images as input and determines validity
+        # The discriminator takes generated images as input and determines
+        # validity
         validity = self.discriminator(img)
 
         # The combined model (stacked generator and discriminator)
@@ -71,7 +72,8 @@ class GAN():
         # Typical layer by layer neural net. Initialized using Sequential()
         model = Sequential()
 
-        # Adding a Dense layer to the network with input as 100 dim and output as 256 dim
+        # Adding a Dense layer to the network with input as 100 dim and output
+        # as 256 dim
         model.add(Dense(256, input_dim=self.latent_dim))
         # Adding the activation function for the layer, in this case LeakyReLU
         model.add(LeakyReLU(alpha=0.2))
@@ -90,7 +92,8 @@ class GAN():
         model.add(LeakyReLU(alpha=0.2))
         model.add(BatchNormalization(momentum=0.8))
 
-        # Final layer with activation as tanh and using reshape to obtain the image
+        # Final layer with activation as tanh and using reshape to obtain the
+        # image
         model.add(Dense(np.prod(self.img_shape), activation='tanh'))
         model.add(Reshape(self.img_shape))
 
@@ -123,7 +126,8 @@ class GAN():
         model.add(Dense(256))
         model.add(LeakyReLU(alpha=0.2))
 
-        # Adding the final dense layer and then setting sigmoid as the activation function
+        # Adding the final dense layer and then setting sigmoid as the
+        # activation function
         model.add(Dense(1, activation='sigmoid'))
 
         # Prints the details of the discriminator net
@@ -178,7 +182,8 @@ class GAN():
 
             noise = np.random.normal(0, 1, (batch_size, 100))
 
-            # Train the generator (to have the discriminator label samples as valid)
+            # Train the generator
+            # (to have the discriminator label samples as valid)
             g_loss = self.combined.train_on_batch(noise, valid)
 
             # Plot the progress
