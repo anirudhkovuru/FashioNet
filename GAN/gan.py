@@ -20,7 +20,7 @@ import numpy as np
 # GAN class
 class GAN():
 
-    # Initializer for the GAN class 
+    # Initializer for the GAN class
     def __init__(self):
 
         # Image properties
@@ -30,18 +30,19 @@ class GAN():
 
         # Image shape
         self.img_shape = (self.img_rows, self.img_cols, self.channels)
-        
+
         # Size of the noise vector
         self.latent_dim = 100
 
-        # Initialize the optimizer using Adam with learning rate 0.0002 and beta_01 is 0.5
+        # Initialize the optimizer using Adam with learning rate 0.0002
+        # and beta_01 is 0.5
         optimizer = Adam(0.0002, 0.5)
 
         # Build and compile the discriminator
         self.discriminator = self.build_discriminator()
 
-        # Compile discriminator with binary cross entropy for loss calculation, adam as optimizer
-        # metrics with accuracy
+        # Compile discriminator with binary cross entropy for loss
+        # calculation, adam as optimizer metrics with accuracy
         self.discriminator.compile(loss='binary_crossentropy',
             optimizer=optimizer,
             metrics=['accuracy'])
@@ -74,12 +75,13 @@ class GAN():
         model.add(Dense(256, input_dim=self.latent_dim))
         # Adding the activation function for the layer, in this case LeakyReLU
         model.add(LeakyReLU(alpha=0.2))
-        # Adding a batch normalization layer, to maintain the mean and stddev at 0 and 1 respectively
-        # and 0.8 to control the momentum of this change
+        # Adding a batch normalization layer, to maintain the mean and stddev
+        # at 0 and 1 respectively and 0.8 to control the momentum of this change
         model.add(BatchNormalization(momentum=0.8))
 
         # Repeat for adding every new dense layer
-        # Don't need to specify the input size of the next layer after the first layer is initialized
+        # Don't need to specify the input size of the next layer after the
+        # first layer is initialized
         model.add(Dense(512))
         model.add(LeakyReLU(alpha=0.2))
         model.add(BatchNormalization(momentum=0.8))
