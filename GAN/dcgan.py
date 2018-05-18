@@ -1,5 +1,6 @@
 from __future__ import print_function, division
 
+# Importing keras and its various parts
 from keras.datasets import mnist, cifar10
 from keras.layers import Input, Dense, Reshape, Flatten, Dropout
 from keras.layers import BatchNormalization, Activation, ZeroPadding2D
@@ -8,17 +9,17 @@ from keras.layers.convolutional import UpSampling2D, Conv2D
 from keras.models import Sequential, Model
 from keras.optimizers import Adam
 
+# Importing matplotlib, sys, numpy, cv2, PIL
 import matplotlib.pyplot as plt
-
 import sys
-
 import numpy as np
-
 import cv2
-
 from PIL import Image
 
+# DCGAN class
 class DCGAN():
+
+    # Initialization function
     def __init__(self):
         # Input shape
         self.img_rows = 48
@@ -27,6 +28,7 @@ class DCGAN():
         self.img_shape = (self.img_rows, self.img_cols, self.channels)
         self.latent_dim = 250
 
+        # Adam optimizer with learning rate as 0.0002 and bet_01 as 0.5
         optimizer = Adam(0.0002, 0.5)
 
         # Build and compile the discriminator
@@ -53,34 +55,59 @@ class DCGAN():
         self.combined = Model(z, valid)
         self.combined.compile(loss='binary_crossentropy', optimizer=optimizer)
 
+    # Method to build generator
     def build_generator(self):
 
+        # Initiate the generator model as Sequential
         model = Sequential()
 
+        # Adding a dense layer with input as noise dimensions and output as
+        # 128 x (output_img_side / 4) x (output_img_side / 4)
         model.add(Dense(128 * 12 * 12, activation="relu", input_dim=self.latent_dim))
+        # Adding a reshape layer to convert to 12x12x128
         model.add(Reshape((12, 12, 128)))
+        # Adding an upsampling layer to upscale the image
         model.add(UpSampling2D())
+        # Adding a convolutional layer with 128 filters and filter of size 3x3
         model.add(Conv2D(128, kernel_size=3, padding="same"))
+        # Adding a batch normalization layer, to maintain the mean and stddev
+        # at 0 and 1 respectively and 0.8 to control the momentum of this change
         model.add(BatchNormalization(momentum=0.8))
+        # Adding the activation function for the layer, in this case ReLU
         model.add(Activation("relu"))
+        # Adding an upsampling layer to upscale the image
         model.add(UpSampling2D())
+        # Adding a convolutional layer with 64 filters and filter of size 3x3
         model.add(Conv2D(64, kernel_size=3, padding="same"))
+        # Adding a batch normalization layer, to maintain the mean and stddev
+        # at 0 and 1 respectively and 0.8 to control the momentum of this change
         model.add(BatchNormalization(momentum=0.8))
+        # Adding the activation function for the layer, in this case ReLU
         model.add(Activation("relu"))
+        # Adding a convolutional layer with 3 filters and filter of size 3x3
         model.add(Conv2D(self.channels, kernel_size=3, padding="same"))
+        # Adding the activation function for the layer, in this case tanh
         model.add(Activation("tanh"))
 
+        # Prints the details of the generator net
         model.summary()
 
+        # noise is initialized with shape as latent_dim
         noise = Input(shape=(self.latent_dim,))
+
+        # Image output of the generator model after giving the noise input
         img = model(noise)
 
+        # Return the generator model
         return Model(noise, img)
 
+    # Method to build discriminator
     def build_discriminator(self):
 
+        # Initiate the discriminator model as Sequential
         model = Sequential()
 
+        # The layers for the discriminator
         model.add(Conv2D(32, kernel_size=3, strides=2, input_shape=self.img_shape, padding="same"))
         model.add(LeakyReLU(alpha=0.2))
         model.add(Dropout(0.25))
@@ -100,14 +127,20 @@ class DCGAN():
         model.add(Flatten())
         model.add(Dense(1, activation='sigmoid'))
 
+        # Print the details of the discriminator net
         model.summary()
 
+        # img is initialized with the image shape
         img = Input(shape=self.img_shape)
+
+        # Validity as output of the discriminator after giving img as input
         validity = model(img)
 
+        # Return discriminator model
         return Model(img, validity)
 
-    def load_pics(self):
+    # Method to load the shirt images
+    def load_shirts(self):
         arr = []
         for i in range(5278):
             try:
@@ -116,22 +149,21 @@ class DCGAN():
                 arr.append(temp)
             except Exception as e:
                 continue
-        # arr = np.array(arr)
         arr = np.array(arr)
         print(arr.shape)
         print(type(arr))
         return arr
 
-
+    # Method to train the DCGAN
     def train(self, epochs, batch_size=128, save_interval=50):
 
-        print("loading data..")
         # Load the dataset
-        X_train = self.load_pics()
+        print("loading data..")
+        X_train = self.load_shirts()
         print("data loaded.")
+
         # Rescale -1 to 1
         X_train = X_train / 127.5 - 1.
-        #X_train = np.expand_dims(X_train, axis=3)
 
         # Adversarial ground truths
         valid = np.ones((batch_size, 1))
@@ -170,6 +202,7 @@ class DCGAN():
             if epoch % save_interval == 0:
                 self.save_imgs(epoch)
 
+    # Method to sample at intervals during training
     def save_imgs(self, epoch):
         r, c = 3, 3
         noise = np.random.normal(0, 1, (r * c, self.latent_dim))
@@ -190,6 +223,9 @@ class DCGAN():
 
 
 if __name__ == '__main__':
+    # Create DCGAN object
     dcgan = DCGAN()
+    # Train the DCGAN
     dcgan.train(epochs=4000, batch_size=10, save_interval=20)
+    # Save the generator-discriminator combined model
     dcgan.combined.save("saved-models/combined-model.h5")
