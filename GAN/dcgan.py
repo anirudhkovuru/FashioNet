@@ -14,14 +14,18 @@ import sys
 
 import numpy as np
 
+import cv2
+
+from PIL import Image
+
 class DCGAN():
     def __init__(self):
         # Input shape
-        self.img_rows = 700
-        self.img_cols = 700
+        self.img_rows = 48
+        self.img_cols = 48
         self.channels = 3
         self.img_shape = (self.img_rows, self.img_cols, self.channels)
-        self.latent_dim = 320000
+        self.latent_dim = 250
 
         optimizer = Adam(0.0002, 0.5)
 
@@ -53,8 +57,8 @@ class DCGAN():
 
         model = Sequential()
 
-        model.add(Dense(128 * 175 * 175, activation="relu", input_dim=self.latent_dim))
-        model.add(Reshape((175, 175, 128)))
+        model.add(Dense(128 * 12 * 12, activation="relu", input_dim=self.latent_dim))
+        model.add(Reshape((12, 12, 128)))
         model.add(UpSampling2D())
         model.add(Conv2D(128, kernel_size=3, padding="same"))
         model.add(BatchNormalization(momentum=0.8))
@@ -103,11 +107,28 @@ class DCGAN():
 
         return Model(img, validity)
 
+    def load_pics(self):
+        arr = []
+        for i in range(5278):
+            try:
+                img = Image.open("/home/aman/Documents/pics48/"+str(i)+".jpg")
+                temp = np.array(img)
+                arr.append(temp)
+            except Exception as e:
+                continue
+        # arr = np.array(arr)
+        arr = np.array(arr)
+        print(arr.shape)
+        print(type(arr))
+        return arr
+
+
     def train(self, epochs, batch_size=128, save_interval=50):
 
+        print("loading data..")
         # Load the dataset
-        (X_train, _), (_, _) = cifar10.load_data()
-
+        X_train = self.load_pics()
+        print("data loaded.")
         # Rescale -1 to 1
         X_train = X_train / 127.5 - 1.
         #X_train = np.expand_dims(X_train, axis=3)
@@ -150,7 +171,7 @@ class DCGAN():
                 self.save_imgs(epoch)
 
     def save_imgs(self, epoch):
-        r, c = 1, 1
+        r, c = 3, 3
         noise = np.random.normal(0, 1, (r * c, self.latent_dim))
         gen_imgs = self.generator.predict(noise)
 
@@ -170,5 +191,5 @@ class DCGAN():
 
 if __name__ == '__main__':
     dcgan = DCGAN()
-    dcgan.train(epochs=4000, batch_size=32, save_interval=50)
+    dcgan.train(epochs=4000, batch_size=10, save_interval=20)
     dcgan.combined.save("saved-models/combined-model.h5")
