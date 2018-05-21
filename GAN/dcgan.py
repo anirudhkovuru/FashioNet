@@ -21,11 +21,11 @@ from PIL import Image
 class DCGAN():
     def __init__(self):
         # Input shape
-        self.img_rows = 48
-        self.img_cols = 48
+        self.img_rows = 700
+        self.img_cols = 700
         self.channels = 3
         self.img_shape = (self.img_rows, self.img_cols, self.channels)
-        self.latent_dim = 250
+        self.latent_dim = 500
 
         optimizer = Adam(0.0002, 0.5)
 
@@ -57,8 +57,8 @@ class DCGAN():
 
         model = Sequential()
 
-        model.add(Dense(128 * 12 * 12, activation="relu", input_dim=self.latent_dim))
-        model.add(Reshape((12, 12, 128)))
+        model.add(Dense(128 * 175 * 175, activation="relu", input_dim=self.latent_dim))
+        model.add(Reshape((175, 175, 128)))
         model.add(UpSampling2D())
         model.add(Conv2D(128, kernel_size=3, padding="same"))
         model.add(BatchNormalization(momentum=0.8))
@@ -109,9 +109,9 @@ class DCGAN():
 
     def load_pics(self):
         arr = []
-        for i in range(5278):
+        for i in range(278):
             try:
-                img = Image.open("/home/aman/Documents/pics48/"+str(i)+".jpg")
+                img = Image.open("/home/aman/Documents/pics/"+str(i)+".jpg")
                 temp = np.array(img)
                 arr.append(temp)
             except Exception as e:
@@ -191,5 +191,5 @@ class DCGAN():
 
 if __name__ == '__main__':
     dcgan = DCGAN()
-    dcgan.train(epochs=4000, batch_size=10, save_interval=20)
+    dcgan.train(epochs=4000, batch_size=5, save_interval=20)
     dcgan.combined.save("saved-models/combined-model.h5")
