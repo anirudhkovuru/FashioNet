@@ -26,7 +26,7 @@ class DCGAN():
         self.img_cols = 48
         self.channels = 3
         self.img_shape = (self.img_rows, self.img_cols, self.channels)
-        self.latent_dim = 500
+        self.latent_dim = 200
 
         # Adam optimizer with learning rate as 0.0002 and bet_01 as 0.5
         optimizer = Adam(0.0002, 0.5)
@@ -141,9 +141,9 @@ class DCGAN():
     # Method to load the shirt images
     def load_shirts(self):
         arr = []
-        for i in range(278):
+        for i in range(5300):
             try:
-                img = Image.open("/home/aman/Documents/pics/"+str(i)+".jpg")
+                img = Image.open("/home/aman/Documents/pics48/"+str(i)+".jpg")
                 temp = np.array(img)
                 arr.append(temp)
             except Exception as e:
@@ -225,6 +225,7 @@ if __name__ == '__main__':
     # Create DCGAN object
     dcgan = DCGAN()
     # Train the DCGAN
-    dcgan.train(epochs=4000, batch_size=5, save_interval=20)
+    dcgan.train(epochs=2200, batch_size=5, save_interval=20)
     # Save the generator-discriminator combined model
-    dcgan.combined.save("saved-models/combined-model.h5")
+    dcgan.generator.save("saved-models/generator-model.h5")
+    dcgan.discriminator.save("saved-models/discriminator-model.h5")
