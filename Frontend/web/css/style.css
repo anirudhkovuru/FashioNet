@@ -1,0 +1,2552 @@
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+html, body{
+	margin:0;
+	font-size: 100%;
+	background: #fff;
+    font-family: 'Work Sans', sans-serif;
+}
+body a {
+	text-decoration:none;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+a:hover{
+ text-decoration:none;
+}
+input[type="button"],input[type="submit"]{
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin:0;
+    font-family: 'Work Sans', sans-serif;
+}	
+p{
+	margin:0;
+	letter-spacing:1px;
+	font-size: 0.9em;
+}
+ul{
+	margin:0;
+	padding:0;
+}
+label{
+	margin:0;
+}
+/*-- header --*/
+.agileits-logo {
+	text-align:center;
+}
+.agileits-logo h1{
+	margin:0;
+}
+.agileits-logo h1 a {
+    font-size: 1.3em;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing:1px;
+    padding: 0;
+}
+.agileits-logo h1 a span{
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-weight: 300;
+    color: #FFFFFF;
+}
+.banner_header_top_wthree {
+    background: #000;
+    padding: 2em 0 1em 0;
+}
+/* Rectangle Out */
+.hvr-rectangle-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  background: #e1e1e1;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-rectangle-out:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffb900;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-rectangle-out:hover, .hvr-rectangle-out:focus, .hvr-rectangle-out:active {
+  color: white;
+}
+.hvr-rectangle-out:hover:before, .hvr-rectangle-out:focus:before, .hvr-rectangle-out:active:before {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+/*-- nav --*/
+.navbar-default {
+    background: none;
+    border: none;
+}
+.navbar {
+    margin-bottom: 0;
+}
+.navbar-collapse {
+    padding: 0;
+}
+.navbar-right {
+    margin-right: 0;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #ffb900;
+    background:none;
+}
+.navbar-default .navbar-nav > li > a {
+    font-weight: 500;
+    letter-spacing: 1px;
+	font-size:0.9em;
+}
+.navbar-nav > li > a {
+    margin: 0;
+    padding:0 1.5em;
+    text-transform: uppercase;
+}
+.navbar-default .navbar-nav > li > a:hover{
+    color:#ec9114;
+}
+.navbar-default .navbar-nav > li > a:focus {
+    color: #fff;
+	outline:none;
+}
+nav.navbar.navbar-default {
+    background: none;
+}
+.navbar-right {
+    float:none!important;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color:#fff;
+    background: none;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+.navbar-default .navbar-nav  > .active.open > a:focus {
+	background:transparent;
+	color: #fff;
+}
+.navbar-default .navbar-brand,.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #fff;
+}
+.navbar-brand {
+    height: 42px;
+    padding: 0;
+    font-size: 1.1em;
+    line-height: 35px;
+	letter-spacing: 2px;
+}
+.navbar-brand span{
+	color: #0accff;
+}
+.link-effect-2 a {
+  overflow: hidden;
+  font-weight: 400;
+}
+.link-effect-2 a span {
+  position: relative;
+  display: inline-block;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.link-effect-2 a span::before {
+    color: #ffb900;
+    position: absolute;
+    top: 100%;
+    content: attr(data-hover);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.link-effect-2 a:hover span {
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+.navbar-nav li.active:after {
+    background: none !important;
+    width: 0px !important;
+}
+.navbar-nav li:after {
+    content: "";
+    position: absolute;
+    background: #4a4a4a;
+    height: 14px;
+    width: 2px;
+    top: 4px;
+    left: 0;
+}
+.agile_short_dropdown {
+    border-radius: 0;
+    background: #ffffff;
+    text-align: center;
+	padding:0;
+	border: none;
+}
+.agile_short_dropdown li a{
+	text-transform:uppercase;
+	color:#212121;
+	font-size:13px;
+	font-weight:600;
+	padding: .8em 0;
+}
+.agile_short_dropdown > li > a:hover{
+    color:#fff;
+    text-decoration:none;
+    background-color:#00acee;
+}
+.w3_agile_phone p{
+	color:#fff;
+	font-weight:600;
+}
+.w3_agile_phone p i{
+	padding-right:1em;
+}
+/*-- //header --*/
+/*-- //banner-top --*/
+.carousel-caption {
+    position: inherit;
+    min-height: 500px!important;
+    padding-top: 10em;
+    text-align: left;
+}
+.header-top_agileits {
+    text-align: center;
+    margin: 2em auto 0;
+    width: 54%;
+}
+/*-- banner --*/  
+.carousel .item{    
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat; 
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner1.jpg) no-repeat;
+	background-size:cover;	 
+}
+.carousel .item.item2{   
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat; 
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner2.jpg) no-repeat;
+	background-size:cover;	
+}   
+.carousel .item.item3{   
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat; 
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner3.jpg) no-repeat;
+	background-size:cover;	 
+}   
+.carousel .item.item4{        
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner4.jpg) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner4.jpg) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner4.jpg) no-repeat;
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner4.jpg) no-repeat;
+	background-size:cover; 
+}  
+.carousel .item.item5{    
+	background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner5.jpg) no-repeat;
+	background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner5.jpg) no-repeat;
+	background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner5.jpg) no-repeat;
+	background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url(../images/banner5.jpg) no-repeat;
+	background-size:cover; 
+}  
+
+.carousel-caption h2, .carousel-caption h3 {
+    font-size: 3em;
+    font-weight: 300;
+    letter-spacing: 8px;
+} 
+.carousel-caption h2 span, .carousel-caption h3 span{
+    font-weight:600;
+    color:#00acee;
+}
+.carousel-caption p {
+    letter-spacing: 13px;
+    font-size: 1em;
+    font-weight: 300;
+    color: #fff;
+    margin: 1em 0 2em 0;
+}
+.carousel-caption a {
+    color: #fff;
+    letter-spacing: 2px;
+    padding: 11px 20px;
+    background:#ffb900;
+    font-size: 0.9em;
+}
+.codes{
+	padding:5em 0; 
+	background:#fff; 
+}
+.codes.agileitsbg2 {
+    background: #E74C3C;
+	background-image:-webkit-linear-gradient(#ff9d2f, #ff6126);
+	background-image:-moz-linear-gradient(#ff9d2f, #ff6126);
+	background-image:-ms-linear-gradient(#ff9d2f, #ff6126);
+	background-image: linear-gradient(#ff9d2f, #ff6126); 
+    padding-bottom: 10em;
+}
+.codes.agileitsbg3 {
+    background: #3498DB;  
+    padding-bottom: 10em;
+}
+.codes.agileitsbg4 {
+    background: #2ECC71 ; 
+    padding-bottom: 10em;
+}
+.carousel.slide.grid_3.grid_4 {  
+    border-top: 10px solid #3ACFD5;
+    border-bottom: 10px solid #3a4ed5;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-position: 0 0, 100% 0;
+    background-repeat: no-repeat;
+    -webkit-background-size: 10px 100%;
+    -moz-background-size: 10px 100%;
+    background-size: 10px 100%;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dÃ¢â‚¬Â¦0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2xlc3NoYXQtZ2VuZXJhdGVkKSIgLz48L3N2Zz4=),url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dÃ¢â‚¬Â¦0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2xlc3NoYXQtZ2VuZXJhdGVkKSIgLz48L3N2Zz4=);
+    background-image: -webkit-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%), -webkit-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+    background-image: -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%), -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+    background-image: -o-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%), -o-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+    background-image: linear-gradient(to bottom, #3acfd5 0%, #3a4ed5 100%), linear-gradient(to bottom, #3acfd5 0%, #3a4ed5 100%);
+}
+.carousel-indicators {
+    bottom: 20%;
+    left: 22%;
+}
+/*-- //banner --*/
+#welcome h2 {
+    font-size: 2.3em;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+.about h4{
+    font-size: 1.6em;
+    margin: 1em 0 0.5em 0;
+    color: #333332;
+}
+.about span {
+    font-weight: 700;
+    color: #00ad45;
+}
+.about_agileinfo h3 {
+    text-align: left;
+    margin-top: 2em;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 0;
+    color: #303030;
+}
+.about_agileinfo p {
+    font-size: 14px;
+    line-height: 2em;
+    margin-top: 1em;
+    color: #717171;
+    letter-spacing: 1px;
+}
+.about_agileinfo p:nth-child(2){
+    margin-bottom:2em;
+}
+.about_agileinfo_grid_imgs img {
+    width: 75%;
+    margin: 2em 0 0 7em;
+    text-align: center;
+}
+.about_agileinfo_grid_imgs {
+	position:relative;
+}
+.aboutimg img {
+    position: absolute;
+    left: 0%;
+    margin: 0 0 0 2em;
+    bottom: -50%;
+    width: 300px;
+    height: 300px;
+}
+.services,.team,.contact-w3layouts,.agile_testimonials,#last_bottom_agile,#pricing {
+    padding: 5em 0;
+}
+#welcome {
+  padding: 5em 0 10em 0;
+}
+.w3l_header {
+      font-size: 2.8em;
+    color: #262c38;
+    letter-spacing: 1px;
+    position: relative;
+    font-weight:600;
+    text-align: center;
+}
+.w3l_header:after {
+    border-top: 2px solid #eb5424;
+    display: block;
+    width: 81px;
+    content: "";
+    margin: 8px auto 0;
+}
+.w3l_header span {
+    color:#00acee;
+}
+span.agile_says {
+    color: #fff;
+}
+.agile_wthree_inner_grids {
+    margin-top: 3em;
+}
+/*-- //about --*/
+/*-- /modal-info--*/
+.modal-info h4 {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 600;
+    margin: 0.5em 0 0.5em 0;
+    color: #000;
+}
+.modal-info h5 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin: 0.5em 0 0.5em 0;
+    color: #00acee;
+}
+/*-- //modal-info--*/
+/*-- services --*/
+.services{
+    background: #000;
+}
+.services h3{
+	color:#FFFFFF;
+}
+.agileits-service-info {
+  position:relative;
+}
+.agileits-service-info span {
+    width: 20%;
+    height: 1%;
+    background: #fff;
+    position: absolute;
+    text-align: center;
+    left: 40%;
+    bottom: 66%;
+}
+.w3ls_services_agile-grid{
+	text-align:center;
+	padding:0 10px;
+}
+.agile_w3l_service_icon i.fa.fa-desktop,.agile_w3l_service_icon i.fa.fa-clone,.agile_w3l_service_icon i.fa.fa-navicon,.agile_w3l_service_icon i.fa.fa-pencil-square-o,.agile_w3l_service_icon i.fa{
+	font-size: 2em;
+    border-radius: 0%;
+    -webkit-border-radius: 0%;
+    -moz-border-radius: 0%;
+    -ms-border-radius: 0%;
+    -o-border-radius: 0%;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+.agile_w3l_service_icon {
+    width: 90px;
+    height: 90px;
+    color: #fff;
+    background: none;
+    border: solid 2px #fff;
+    margin: 0 auto 1em;
+    transition: 0.5s all;
+    -webkit-transition: 0.7s all;
+    -o-transition: 0.7s all;
+    -moz-transition: 0.7s all;
+    -ms-transition: 0.7s all;
+    line-height: 6em;
+}
+.agileits-service-info h5{
+       color: #ffb900;
+    font-size: 1.2em;
+    letter-spacing: 4px;
+    margin: 1em 0;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+.agileits-service-info p{
+	color:#808489;
+    font-size: 14px;
+    text-transform: capitalize;
+    letter-spacing: .3px;
+	line-height:1.8em;
+	margin:0;
+    margin-top: 2.5em;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+}
+.w3ls_services_agile-grid:hover .agile_w3l_service_icon,.w3ls_services_agile-grid:hover .agile_w3l_service_icon,.w3ls_services_agile-grid:hover .agile_w3l_service_icon,.w3ls_services_agile-grid:hover .agile_w3l_service_icon{
+	background:#FFFFFF;
+	border:solid 2px #FFFFFF;
+    color: #111;
+}
+.w3ls_services_agile-grid:hover .agileits-service-info h5{
+	color:#FFFFFF;
+}
+.w3ls_services_agile-grid:hover .agileits-service-info p{
+	color:#FFFFFF;
+}
+.w3ls_services_agile-grid.two{
+   margin-top:2.5em;
+}
+/*-- //services --*/
+/*-- team --*/
+.w3_agile_team_grids{
+	margin:3em 0 0;
+}
+.w3_agile_team_grid h3{
+    font-size: 1.4em;
+    color: #212121;
+    margin: 1em 0 0.5em;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.w3_agile_team_grid p {
+    color: #00acee;
+    margin-bottom: 1em;
+    font-size: 1em;
+}
+.w3_agile_team_grid ul li{
+	display:inline-block;
+	margin-right:1em;
+}
+.w3_agile_team_grid ul li:last-child{
+	margin:0;
+}
+.w3_agile_team_grid {
+    text-align: center;
+}
+ul.footer_list_icons.team_icons_agile li a {
+    color: #000;
+}
+ul.footer_list_icons.team_icons_agile {
+    border-top: 1px solid #ddd;
+	padding:1.5em 0;
+}
+ul.footer_list_icons.team_icons_agile li a:hover {
+    color: #00acee;
+}
+/*-- //team --*/
+
+/*-- /Gallery --*/
+.agile_gallery_grid {
+        float: left;
+        padding:0;
+ }
+.agile_gallery_grid_left {
+    padding: 0;
+}
+.agile_gallery_grid img {
+    width: 100%;
+}
+.agile_gallery_grid img {
+    width: 100%;
+}
+/*-- //Gallery --*/
+/*-- /pricing --*/
+
+/*-- pricing --*/
+.pricing_inner_w3ls {
+    margin: 0 auto;
+    padding: 0;
+    width: 31.3%;
+    margin: 0 0.5%;
+    background: #d9dada;
+    border: 1px solid #eee;
+    transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+}
+.pricing_inner_w3ls:hover .pricing-top{
+     background: #00acee;
+}
+.pricing_inner_w3ls:hover a.popup-with-zoom-anim{
+    background: #00acee;
+}
+.pricing-top{
+    padding: 1.2em 0;
+    background: rgb(254, 184, 0);
+    text-align: center;
+}
+.pricing-top.orange,a.popup-with-zoom-anim.orange{
+    	background:#e91e63;
+}
+.pricing-top.purple,a.popup-with-zoom-anim.purple{
+  background:#6cbc35; 
+}
+.pop_up h4 {
+    text-align: center;
+    font-size: 2em;
+    margin: 1em 0 0.5em 0;
+    font-size: 1.8em;
+    color: #111;
+}
+.pricing-top h3{
+    color: #FFF;
+    font-size: 2em;
+    margin: 0;
+    font-weight: 100;
+}
+.pricing-top p{
+	color:#FFF;
+	font-size:.875em;
+	margin:1em 0 0 0;
+}
+.pricing-top p span{
+    font-size: 4em;
+    font-weight: 600;
+}
+.pricing-bottom{
+	background: rgba(255, 255, 255, 0.75);
+    text-align: center;
+    padding:4em 2em;
+}
+.pricing_inner_w3ls:hover{
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+}
+.pricing-bottom-bottom p{
+    color: #000000;
+    font-size: 1em;
+    margin: 0 0 1em 0;
+}
+.pricing-bottom-bottom p span{
+	font-weight:600;
+	color:#333;
+}
+p.text {
+    margin-bottom: 0;
+}
+.buy-button {
+    margin: 1.5em 0 0 0;
+}
+.buy-button a{
+    background: #fd5c63;
+    padding: .5em 2em;
+	border: solid 1px #fd5c63;
+    color: #fff;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	-webkit-appearance:none;
+}
+.buy-button a:hover{
+	background: none;
+	border: solid 1px #333;
+	color:#333;
+	text-decoration: none;
+}
+.buy-button a:focus{
+	outline:none;
+}
+.green-button a {
+    background: #5d9830;
+    border: solid 1px #5d9830;
+}
+.blue-button a{
+	background:#0099e5;
+	border: solid 1px #0099e5;
+}
+.yellow-button a{
+	background:#ff9800;
+	border: solid 1px #ff9800;
+}
+.pink-button a{
+	background:#e91e63;
+	border: solid 1px #e91e63;
+}
+/*-- //pricing --*/
+
+p.visit {
+	font-size: 20px;
+	margin: 20px 0;
+	color: #6f6f6f;
+	font-weight: 300;
+}
+
+p.support, ul.support li {
+    color: #212121;
+    text-align: center;
+    margin: 5px 0;
+    font-size: 15px;
+}
+
+ul.support li {
+	line-height: 25px;
+	display:block;
+}
+
+.sign.text-center {
+	margin-top: 60px;
+}
+
+a.popup-with-zoom-anim {
+    padding: 0.7em 1.5em;
+    background-color: #EEE;
+    color: #fff;
+    background-color: #ffb900;
+    text-align: center;
+}
+.agilegrid5 .sign.text-center {
+	margin-top: 60px;
+}
+.priceman img {
+    width: 100%;
+}
+/*-- Popup-Box --*/
+
+form li {
+	list-style: none;
+}
+
+form ul {
+	padding: 0;
+}
+
+h4.payment-head {
+	font-size: 1.9em;
+	color: #222222;
+	padding: 0.5em 0;
+	text-align: left;
+	float: left;
+}
+
+.payment-online-form-left span {
+	vertical-align: sub;
+	margin-right: 30px;
+}
+
+.payment-online-form-left form {
+	padding: 0;
+}
+
+.payment-online-form-left input[type="text"] ,.payment-online-form-left input[type="email"]{
+	padding: 1em;
+	color: #485460;
+	width: 44.3%;
+	margin: 0.5em 0;
+	border: 1px solid;
+	outline: none;
+	transition: border-color 0.3s;
+	-o-transition: border-color 0.3s;
+	-ms-transition: border-color 0.3s;
+	-moz-transition: border-color 0.3s;
+	-webkit-transition: border-color 0.3s;
+	float: left;
+	font-size: 0.9em;
+	border-color: #CCC;
+	-webkit-appearance: none;
+}
+.payment-online-form-left textarea {
+    width: 89.5%;
+    height: 150px;
+    margin: 6px 0;
+    padding: 10px;
+}
+input#datepicker {
+	padding: 1em 1em 1em 1em;
+}
+
+.payment-online-form-left input[type="text"]:hover {
+	border-color: #fa6e6f;
+}
+
+.text-box-light {
+	background: #FFF url("../images/calender.png") no-repeat 95% 50%;
+	cursor: pointer;
+	position: relative;
+}
+
+.payment-online-form-left ul li:first-child input[type="text"],.payment-online-form-left ul li:first-child input[type="email"] {
+	margin-right: 1%;
+}
+.payment-online-form-left input[type="text"]:active, .payment-online-form-left input[type="text"]:hover ,.payment-online-form-left textarea:hover{
+    border-color: #636465;
+    color: #5c5c5d;
+}
+
+.payment-date-section {
+	background: url("../images/calender.png") no-repeat #fff 50%;
+}
+
+.payment-sendbtns {
+    float: right;
+    margin: 1.2em 4.5em 0;
+}
+
+.payment-sendbtns input[type="reset"] {
+    background: #111;
+    padding: 12px 50px;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 17px;
+    display: block;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    outline: none;
+    letter-spacing: 1px;
+}
+
+.payment-sendbtns input[type="reset"]:hover {
+	color: #FFF;
+	background: #2196F3;
+}
+
+.payment-sendbtns input[type="submit"] {
+    background: #ffb900;
+    padding: 12px 27px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    display: block;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-appearance: none;
+    outline: none;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+.payment-sendbtns input[type="submit"]:hover {
+	color: #fff;
+	background: #2196F3;
+}
+
+.payment-sendbtns li {
+	display: inline-block;
+}
+
+.payment-type li {
+	display: inline-block;
+}
+
+.payment-online-form-right {
+	background: #2B2937;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	border-bottom: 4px solid #1A1822;
+}
+
+input[type=checkbox].css-checkbox1, input[type=checkbox].css-checkbox2 {
+	display: none;
+}
+
+input[type=checkbox].css-checkbox1 + label.css-label1 {
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	line-height: 18px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	vertical-align: super;
+	cursor: pointer;
+	background: url("../images/icon.png") no-repeat -188px -25px;
+	margin-right: 8px;
+}
+
+input[type=checkbox].css-checkbox1:checked + label.css-label1 {
+	background: url("../images/icon.png") no-repeat -215px -25px;
+}
+
+input[type=checkbox].css-checkbox2 + label.css-label2 {
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+	line-height: 18px;
+	background-repeat: no-repeat;
+	background-position: -20px 0px;
+	vertical-align: super;
+	cursor: pointer;
+	background: url("../images/icon.png") no-repeat -218px -24px;
+}
+
+input[type=checkbox].css-checkbox2:checked + label.css-label2 {
+	background: url("../images/icon.png") no-repeat -190px -24px;
+}
+
+.visa {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	background: url("../images/icon.png") no-repeat -32px -28px;
+}
+
+.paypal {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	background: url("../images/icon.png") no-repeat -71px -26px;
+}
+
+.payment-online-form-right {
+	float: right;
+	width: 30%;
+	background: #2B2937;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	border-bottom: 4px solid #1A1822;
+	padding-bottom: 2em;
+}
+
+.payment-online-form-right a:hover {
+	color: #1ABC9C;
+}
+.payment-online-form-right ul li {
+	display: block;
+	padding: 0.5em;
+}
+.payment-online-form-right ul li a {
+	color: #9095AA;
+}
+.payment-online-form-right h4 {
+	color: #FFF;
+	font-size: 1em;
+	text-transform: uppercase;
+	border-bottom: 1px solid rgba(144, 149, 170, 0.22);
+	padding: 0.8em;
+}
+
+.payment-online-form-right ul {
+	padding: 0px 1em;
+}
+
+.payment-online-form-right h5 {
+	color: #FFF;
+	padding: 0.5em 0.8em 0.4em;
+	font-size: 1em;
+}
+
+.payment-type {
+	margin-top: 3%;
+	text-align: left;
+}
+
+input[type=checkbox].css-checkbox3, input[type=checkbox].css-checkbox4, input[type=checkbox].css-checkbox5, input[type=checkbox].css-checkbox6 {
+	display: none;
+}
+
+div#small-dialog {
+	padding: 20px;
+	width: 40%;
+	margin: 0 auto;
+	background-color: #FFF;
+}
+
+.my-mfp-zoom-in #small-dialog {
+	opacity: 0;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	-o-transform: scale(0.8);
+	transform: scale(0.8);
+}
+
+.my-mfp-zoom-in.mfp-ready #small-dialog {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+}
+
+.my-mfp-zoom-in.mfp-removing #small-dialog {
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	-o-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0;
+}
+
+.my-mfp-zoom-in.mfp-bg {
+	opacity: 0;
+	-webkit-transition: opacity 0.3s ease-out;
+	-moz-transition: opacity 0.3s ease-out;
+	-o-transition: opacity 0.3s ease-out;
+	transition: opacity 0.3s ease-out;
+}
+
+.my-mfp-zoom-in.mfp-ready.mfp-bg {
+	opacity: 0.97;
+}
+
+.my-mfp-zoom-in.mfp-removing.mfp-bg {
+	opacity: 0;
+}
+
+.mfp-bg {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1042;
+	overflow: hidden;
+	position: fixed;
+	background: #0b0b0b;
+	opacity: 0.97;
+	filter: alpha(opacity=80);
+}
+
+.mfp-wrap {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1043;
+	position: fixed;
+	outline: none !important;
+	-webkit-backface-visibility: hidden;
+}
+
+.mfp-container {
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	right: 0;
+	top: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background-color: #000;
+}
+
+.mfp-container:before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.mfp-align-top .mfp-container:before {
+	display: none;
+}
+
+.mfp-content {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 auto;
+	text-align: left;
+	z-index: 1045;
+}
+
+.mfp-inline-holder .mfp-content, .mfp-ajax-holder .mfp-content {
+	width: 100%;
+	cursor: auto;
+}
+
+.mfp-ajax-cur {
+	cursor: progress;
+}
+
+.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+	cursor: -moz-zoom-out;
+	cursor: -webkit-zoom-out;
+	cursor: zoom-out;
+}
+
+.mfp-zoom {
+	cursor: pointer;
+	cursor: -webkit-zoom-in;
+	cursor: -moz-zoom-in;
+	cursor: zoom-in;
+}
+
+.mfp-auto-cursor .mfp-content {
+	cursor: auto;
+}
+
+.mfp-close, .mfp-arrow, .mfp-preloader, .mfp-counter {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+
+.mfp-loading.mfp-figure {
+	display: none;
+}
+
+.mfp-hide {
+	display: none !important;
+}
+
+.mfp-content iframe{
+	width: 100%;
+	min-height: 500px;
+}
+
+.mfp-preloader {
+	color: #cccccc;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	text-align: center;
+	margin-top: -0.8em;
+	left: 8px;
+	right: 8px;
+	z-index: 1044;
+}
+
+.mfp-preloader a {
+	color: #cccccc;
+}
+
+.mfp-preloader a:hover {
+	color: white;
+}
+
+.mfp-s-ready .mfp-preloader {
+	display: none;
+}
+
+.mfp-s-error .mfp-content {
+	display: none;
+}
+
+button.mfp-close, button.mfp-arrow {
+	overflow: visible;
+	cursor: pointer;
+	border: 0;
+	background:#EEEEEE;
+	-webkit-appearance: none;
+	display: block;
+	padding: 0;
+	z-index: 1046;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+.mfp-close {
+	width: 32px;
+	height: 32px;
+	line-height: 1;
+	position: absolute;
+	right: 0;
+	top: -32px;
+	text-decoration: none;
+	text-align: center;
+	padding: 0 0 18px 10px;
+	color: white;
+	font-style: normal;
+	font-size: 28px;
+	outline: none;
+}
+
+.mfp-close:hover, .mfp-close:focus {
+	opacity: 1;
+}
+
+.mfp-close-btn-in .mfp-close {
+	color: #333333;
+	padding: 0;
+}
+
+.mfp-image-holder .mfp-close, .mfp-iframe-holder .mfp-close {
+	color: white;
+	right: -6px;
+	text-align: right;
+	padding-right: 6px;
+	width: 100%;
+}
+/*-- //Popup-Box --*/
+/* //pricing */
+/*-- /clients --*/
+.testmonial_agile_info {
+    padding: 0em 10em;
+   margin-top: 6em;
+}
+.agileits-button.two a, .agileits-button a {
+    padding: 0.6em 1em;
+    color: #fff;
+    font-size: 1em;
+    letter-spacing: 1px;
+    background: #ffb900;
+    border: 1px solid #ffb900;
+    border-radius: 0px;
+}
+.agileits-button.two a:hover,.agileits-button a:hover{
+   border:1px solid #00acee;
+   background:#00acee;
+}
+.agileits-button.two {
+    text-align: left;
+    margin-top: 2em;
+}
+.testmonial_agile_info p {
+   color: #fff;
+    margin: 1em 0;
+    line-height: 2em;
+}
+.agile_tesimonials_content {
+    text-align: center;
+    padding: 3em 5em;
+    border: 3px solid #027faf;
+    width: 74%;
+    margin: 4em auto 0em;
+}
+.agile_tesimonials_content p{
+    color: #fff;
+    font-size: .8em;
+    margin: 0;
+    line-height: 2em;
+    letter-spacing: 2px;
+}
+.agile_tesimonials_content h4 {
+    color: #ffffff;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    margin: 1em 0;
+}
+/*-- //clients --*/
+/*--faq --*/
+.pa_italic i {
+    left: -1em;
+	font-size: 11px;
+}
+.pa_italic span {
+    display: none;
+}
+.collapsed span {
+    display: inline-block;
+    left: -1em;
+	font-size: 11px;
+}
+.collapsed i {
+    display: none;
+}
+.panel-heading {
+    padding:10px 35px;
+}
+.panel-title {
+    font-size: 1em;
+    color: #fff;
+    text-transform: capitalize;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+.panel-default {
+    border-color: #FFF;
+	background: #f5f5f5;
+}
+.panel-default > .panel-heading {
+    border-color: #FFF;
+    color: #fff;
+    background-color: #252525;
+}
+.panel-body {
+    padding: 1.5em;
+    font-size: 15px;
+    line-height: 2em;
+    color: #666;
+}
+a.pa_italic label {
+    cursor: pointer;
+	font-weight:500;
+}
+a.pa_italic:focus {
+    outline: none;
+    text-decoration: none;
+}
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: transparent;
+}
+.agile_testimonials {
+    background: #00acee;
+}
+h4.agile_sub_tittle {
+    margin-bottom: 1em;
+    color: #333;
+    font-size: 1.6em;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+/*-- //faq --*/
+.sale-w3ls h6 {
+    font-size: 3em;
+    text-align: center;
+    letter-spacing: 5px;
+    color: #fff;
+    font-weight: 300;
+    padding-top: 2.5em;
+    margin-bottom: 0.8em;
+}
+.sale-w3ls {
+    background: url(../images/banner4.jpg)no-repeat 0px 0px;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    min-height: 380px;
+    text-align: center;
+}
+.w3layouts_mail_grid {
+    padding: 0 1em;
+}
+.w3layouts_mail_grid_left1{
+	float: left;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+}
+.w3layouts_mail_grid_left1 i{
+	font-size: 1.3em;
+    color: #fff;
+    line-height: 3.2em;
+}
+.w3layouts_mail_grid_left2{
+	float:right;
+	width:70%;
+	    text-align: left;
+}
+.w3layouts_mail_grid_left2 h3{
+    font-size: 0.9em;
+    color: #fff;
+    margin: 0em 0 0.5em;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+.w3layouts_mail_grid_left2 a{
+	text-decoration:none;
+	color: #545454;
+	font-size:14px;
+}
+.w3layouts_mail_grid_left2 a:hover{
+	color:#212121;
+}
+.w3layouts_mail_grid_left2 p{
+    color: #02678e;
+    font-size: 0.9em;
+    line-height: 1.8em;
+}
+.agile_newsletter_footer {
+    border-top: 1px solid #101010;
+    border-bottom: 1px solid #101010;
+    padding: 1em 0;
+    margin-top: 3em;
+}
+/* Radial Out */
+.hvr-radial-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+  background: #111;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-radial-out:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:#ffb900;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-radial-out:hover, .hvr-radial-out:focus, .hvr-radial-out:active {
+  color: white;
+}
+.hvr-radial-out:hover:before, .hvr-radial-out:focus:before, .hvr-radial-out:active:before,.w3layouts_mail_grid_left:hover .hvr-radial-out:before{
+  -webkit-transform: scale(2);
+  transform: scale(2);
+}
+.coupons {
+    padding: 4em 0;
+    background: #00acee;
+}
+/*-- //coupons --*/
+/*--Contact --*/
+.contact p.sub {
+    font-size: 15px;
+}
+.contact-w3layouts span {
+    color: #00acee;
+    margin-right: 8px;
+    text-align: center;
+}
+p.sub {
+    font-size: 16px;
+    margin-top: 1em;
+    color: #949393!important;
+}
+.add .icon,.sub .icon {
+    font-size: 16px!important;
+}
+p.add {
+    font-size: 16px;
+    margin-top: 9px;
+    color: #949393!important;
+}
+a.mail {
+    color: #949393;
+	text-decoration:none;
+}
+a.mail:hover {
+ color: #ffb900;
+}
+p.sub i,p.add i {
+    width: 32px;
+    height: 32px;
+    background: #111;
+    line-height: 30px;
+    border-radius: 50%;
+    margin-left: 14px;
+    text-align: center;
+    color: #fff;
+}
+.contact-w3layouts h3 {
+    margin-bottom: 0.5em!important;
+}
+.mail-grid1-form input[type="text"], .mail-grid1-form input[type="email"], .mail-grid1-form textarea {
+    outline: none;
+    border: none;
+    font-size: 15px;
+    color: #888;
+    padding: 15px 15px;
+    background: #f9fcfd;
+    border: 1px solid #ddd;
+    width: 100%;
+    letter-spacing: 1px;
+}
+.mail-grid1-form input[type="text"], .mail-grid1-form input[type="email"] {
+    margin-bottom: 1em;
+}
+.mail-grid1-form textarea {
+    margin: 0 0 1em;
+    min-height: 100px;
+    resize: none;
+}
+.mail-grid1-form input[type="submit"] {
+    outline: none;
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+    font-size: 15px;
+    letter-spacing: .5px;
+    padding: 13px 65px;
+    background: #ffb900;
+    font-size: 16px;
+    border: 2px solid #ffb900;
+    color: #fff;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    -webkit-appearance: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.mail-grid1-form input[type="submit"]:hover {
+    background: #0099e5;
+    border-color: #0099e5;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    -webkit-appearance: none;
+}
+p.para-agileits-w3layouts {
+    font-size: 14px;
+    line-height: 2em;
+    margin-top: 1em;
+    color: #717171;
+    letter-spacing: 1px;
+}
+.agileits-w3layouts-map iframe {
+    border: none;
+    width: 100%;
+    height: 400px;
+}
+/*--footer--*/
+.footer-top_agile_w3l {
+    padding: 4em 0 3em;
+    background: #191d20;
+}
+.footer-grid_wthree_info h3{
+    font-size: 1.8em;
+    margin: 0 0 1em 0;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+}
+.footer-grid_wthree_info p {
+    color: #bbbbbb;
+    font-size: .9em;
+    line-height: 1.8em;
+    margin:1em 0;
+}
+.footer-grid_wthree_info ul, .footer-list ul {
+    padding: 0;
+    margin: 0;
+}
+ul.footer-list li{
+    display: block;
+    margin: .2em 0;
+}
+ul.footer_list_icons  li{
+    display: inline-block;
+	list-style:none;
+	margin-right:1em;
+}
+ul.footer-list li a {
+    color: #bbb;
+    font-size: 1.2em;
+    text-decoration: none;
+    padding-right: 15px;
+}
+ul.footer-list li{
+    color: #bbb;
+    font-size: 1em;
+}
+.footer-grid_wthree_info ul li a {
+    color: #bbb;
+    font-size: 1em;
+    text-decoration: none;
+    line-height: 2em;
+    text-transform: capitalize;
+}
+.footer-grid_wthree_info ul li a:hover{
+    color: #146eb4;
+}
+.agile-footer-grid_wthree_info ul {
+    padding: 0;
+    margin: 0;
+}
+ul.w3agile_footer_grid_list li {
+    list-style-type: none;
+    color: #bbbbbb;
+    line-height: 1.8em;
+    font-size: 1em;
+}
+ul.w3agile_footer_grid_list li a {
+    color: #ff9900;
+    text-decoration: none;
+}
+ul.w3agile_footer_grid_list li span {
+    display: block;
+    margin: 1em 0 0;
+}
+ul.w3agile_footer_grid_list i.fa.fa-twitter {
+    margin-right: 1em;
+}
+.footer-grid_wthree_info input[type="email"],.footer-grid_wthree_info input[type="text"]{
+    outline: none;
+    padding: 11px 20px;
+    background: #fff;
+    border: none;
+    font-size: 15px;
+    color: #212121;
+    margin-top: 1em;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.footer-grid_wthree_info input[type="submit"] {
+    outline: none;
+    padding: 11px 20px;
+    border: none;
+    font-size: 15px;
+    color: #fff;
+    margin: 1em 0 0;
+    border: 2px solid #00acee;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #00acee;
+    letter-spacing: 1px;
+}
+.footer-grid_wthree_info input[type="submit"]:hover{
+    border: 2px solid #ffb900;
+	background:#ffb900;
+}
+.footer-logo a {
+    color: #FFFFFF;
+    font-size: 2em;
+    font-weight: 600;
+    text-decoration: none;
+}
+.footer-grid_wthree_info p {
+    color: #bbbbbb;
+    font-size: 14px;
+    line-height: 1.8em;
+    margin: 1em 0;
+}
+.wthree_copy_right p {
+    margin-top: 40px;
+    text-align: center;
+    color: #c1c1c1;
+    border-top: 1px solid #292c2d;
+    padding: 40px 0 0;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+}
+.wthree_copy_right a {
+    color: #00acee;
+}
+/*-- //footer --*/
+
+/*-- to-top --*/
+#toTop {
+	display: none;
+	text-decoration: none;
+	position: fixed;
+	bottom: 55px;
+	right: 2%;
+	overflow: hidden;
+	z-index: 999; 
+	width: 32px;
+	height: 32px;
+	border: none;
+	text-indent: 100%;
+	background: url(../images/up_arrow.png) no-repeat 0px 0px;
+}
+#toTopHover {
+	width: 32px;
+	height: 32px;
+	display: block;
+	overflow: hidden;
+	float: right;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter: alpha(opacity=0);
+}
+/*-- //to-top --*/
+/*-- responsive media queries --*/
+@media(max-width:1680px){
+	.carousel-indicators {
+        bottom: 20%;
+        left: 18%;
+    }
+}
+@media(max-width:1600px){
+	.carousel-indicators {
+        bottom: 20%;
+        left: 16%;
+    }
+}
+@media(max-width:1440px){
+	.carousel-indicators {
+        bottom: 20%;
+        left: 12%;
+    }
+    .header-top_agileits {
+        margin: 2em auto 0;
+        width: 65%;
+    }
+}
+@media(max-width:1366px){
+	.header-top_agileits {
+        width: 75%;
+    }
+    .services, .team, .contact-w3layouts, .agile_testimonials, #last_bottom_agile, #pricing {
+        padding: 4em 0;
+    }
+    #welcome {
+        padding: 4em 0 9em 0;
+    }
+    .carousel-control .icon-prev, .carousel-control .glyphicon-chevron-left {
+      left: 20%;
+    }
+    .carousel-control .icon-next, .carousel-control .glyphicon-chevron-right {
+      right: 20%;
+    }
+    .carousel-indicators {
+        bottom: 20%;
+        left: 10%;
+    }
+    .carousel-caption h2, .carousel-caption h3 {
+        font-size: 2.8em;
+        font-weight: 300;
+        letter-spacing: 5px;
+    }
+    .testmonial_agile_info {
+     padding: 0em 4em;
+    }
+}
+@media(max-width:1280px){
+	.header-top_agileits {
+        width: 87%;
+    }
+    .carousel-indicators {
+        bottom: 20%;
+        left: 8%;
+    }
+    .w3_agile_team_grid h3 {
+      font-size: 1.2em;
+    }
+    .w3l_header {
+      font-size: 2.6em;
+    }
+    #welcome {
+        padding: 4em 0 4em 0;
+    }
+    .sale-w3ls h6 {
+     font-size: 2.8em;
+    }
+    .testmonial_agile_info {
+      padding: 0em 3em;
+    }
+    .pricing-bottom-bottom p {
+      font-size: 0.8em;
+    }
+    .pricing-bottom {
+        padding: 4em 1em;
+    }
+    
+}
+@media(max-width:1080px){
+	.carousel-indicators {
+        bottom: 20%;
+        left: 8%;
+    }
+    .w3l_header {
+        font-size: 2.4em;
+    }
+    .w3_agile_team_grids,.agile_wthree_inner_grids {
+        margin: 2.5em 0 0;
+    }
+    .agileits-service-info h5 {
+        font-size: 1.1em;
+        letter-spacing: 2px;
+    }
+    .sale-w3ls {
+      min-height: 360px;
+    }
+    .sale-w3ls h6 {
+      font-size: 2.6em;
+    }
+    div#small-dialog {
+        padding: 20px;
+        width: 48%;
+    }
+    .agile_tesimonials_content {
+        padding: 3em 2em;
+        width: 74%;
+        margin: 2em auto 0em;
+    }
+    .sign.text-center {
+        margin-top: 45px;
+    }
+    .aboutimg img {
+        position: absolute;
+        left: 0%;
+        margin: 0 0 0 2em;
+        bottom: -77%;
+        width: 300px;
+        height: 300px;
+    }
+    .w3layouts_mail_grid_left {
+        width: 50%;
+        margin-bottom: 1em;
+    }
+    .w3layouts_mail_grid_left1 i {
+        font-size: 1.3em;
+        line-height: 3.5em;
+    }
+}
+@media(max-width:1050px){
+	.header-top_agileits {
+        width: 93%;
+    }
+    
+}
+@media(max-width:1024px){
+	.carousel-indicators {
+        bottom: 20%;
+        left: 7%;
+    }
+}
+@media(max-width:991px){
+	.carousel-indicators {
+        bottom: 20%;
+        left: 16%;
+    }
+    .about_agileinfo_grid_imgs img {
+        width: 75%;
+        margin: 2em 0 0 0em;
+        text-align: center;
+    }
+    #welcome {
+        padding: 4em 0 22em 0;
+    }
+    .aboutimg img {
+        position: absolute;
+        left: 0%;
+        margin: 0 0 0 4em;
+        bottom: -71%;
+        width: 300px;
+        height: 300px;
+    }
+    .w3ls_services_agile-grid.two {
+        margin-top: 0;
+    }
+    .w3ls_services_agile-grid {
+        padding: 0 10px;
+        margin-bottom: 2em;
+    }
+    .w3_agile_team_grid {
+        text-align: center;
+        float: left;
+    }
+    .agileits-service-info span {
+        width: 20%;
+        height: 1%;
+        left: 40%;
+        bottom: 57%;
+    }
+    .agile_port_w3ls_info {
+        margin: 0 10%;
+    }
+    .menu_w3ls_agile_top_section {
+        margin-bottom: 3em;
+    }
+    .pricing_inner_w3ls {
+        width: 47.3%;
+        margin: 0 0.5%;
+        float: left;
+    }
+    .pricing_inner_w3ls:nth-child(3) {
+        margin:0;
+        margin-top:1em;
+     }
+     .navbar-nav > li > a {
+        margin: 0;
+        padding: 0 1.2em;
+     }
+     .footer-grid_wthree_info:nth-child(2) {
+        margin: 2em 0;
+    }
+    .footer-grid_wthree_info h3 {
+        font-size: 1.6em;
+        margin: 0 0 0.5em 0;
+    }
+    .sale-w3ls h6 {
+        font-size: 2.4em;
+        line-height: 1.5em;
+    }
+    .testmonial_agile_info {
+        padding: 0em 3em;
+        text-align: center;
+        margin-top: 1em;
+    }
+    .agileits-button.two {
+        margin-top: 2em;
+        text-align: center;
+    }
+   div#small-dialog {
+        padding: 20px;
+        width: 57%;
+    }
+    .mail-grid1-form {
+        margin-top: 2em;
+    }
+    .w3layouts_mail_grid_left {
+        width: 50%;
+        margin-bottom: 1em;
+        float: left;
+    }
+}
+@media(max-width:900px){
+    .agileits-service-info h5 {
+        font-size: 1.1em;
+        letter-spacing: 2px;
+        margin: 2em 0;
+    }
+     .agileits-service-info p {
+       margin-top: 1.5em;
+    }
+    .agileits-service-info span {
+        width: 20%;
+        height: 1%;
+        left: 40%;
+        bottom: 58%;
+    }
+    .carousel-indicators {
+        bottom: 20%;
+        left: 13%;
+    }
+    .agile_port_w3ls_info {
+        margin: 0 6%;
+    }
+    div#small-dialog {
+        padding: 20px;
+        width: 78%;
+    }
+
+ }
+@media(max-width:800px){
+	.carousel-caption {
+        min-height: 454px!important;
+        padding-top: 7em;
+    }
+    .carousel-indicators {
+        bottom: 20%;
+        left: 9%;
+    }
+    .agile_port_w3ls_info {
+        margin: 0 1.2%;
+    }
+    .coupons {
+      padding: 3em 0;
+    }
+    .agileits-logo h1 a {
+      font-size: 1.2em;
+    }
+}
+@media(max-width:768px){
+	.header-top_agileits {
+        width: 100%;
+    }
+    .agile_port_w3ls_info {
+        margin: 0 0%;
+    }
+    .agile_gallery_grid {
+        float: left;
+        padding: 0;
+        width: 50%;
+    }
+    .carousel-indicators {
+        bottom: 22%;
+        left: 7%;
+    }
+    .carousel-caption {
+        min-height: 407px!important;
+        padding-top: 5.5em;
+    }
+    .carousel-caption h2, .carousel-caption h3 {
+        font-size: 2.6em;
+        font-weight: 300;
+        letter-spacing: 3px;
+    }
+    #welcome h2 {
+        font-size: 2.1em;
+        margin-bottom: 0.5em;
+        line-height: 1.5em;
+    }
+    .w3l_header {
+        font-size: 2.2em;
+    }
+}
+@media(max-width:767px){
+    .navbar-default .navbar-toggle {
+		border-color: #fff;
+		background: #ec9114;
+	}
+	.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+		background-color: #ec9114;
+	}
+	.navbar-default .navbar-toggle .icon-bar {
+		background-color: #fff;
+	}
+	.navbar-right {
+		margin: 0;
+		float: none !important;
+		text-align: center;
+	}
+	.navbar-nav {
+		margin: 0;
+		background:rgba(0, 0, 0, 0.85);
+	}
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+		border: none;
+	}
+	.navbar-collapse {
+		box-shadow: none;
+	}
+	.navbar-nav > li,.agile_short_dropdown li a {
+		font-size: 13px;
+	}
+	.navbar-nav > li > a {
+		padding: 0;
+		margin: 1em 0;
+	}
+	.navbar-nav .open .dropdown-menu {
+		background-color:#ec9114;
+	}
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+		color: #fff;
+	}
+	.navbar-nav .open .dropdown-menu > li > a, .navbar-nav .open .dropdown-menu .dropdown-header {
+		padding: 1em 0;
+	}
+	.navbar-collapse.in {
+        overflow-y: inherit;
+    }
+    .nav > li {
+        position: relative;
+        display: block;
+        margin: 1em 0;
+    }
+    .navbar-nav .open .dropdown-menu {
+        background-color: #00acee;
+    }
+    .navbar-nav .open .dropdown-menu > li > a {
+        line-height: 20px;
+        padding:7px 0;
+        color:#fff;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+      color:#fff;
+    }
+    .navbar-toggle {
+        position: relative;
+        float: none;
+        padding: 9px 10px;
+        margin-top:0px;
+        margin-right: 0;
+        margin-bottom:0px;
+        border-radius: 0;
+    }
+    .navbar-default .navbar-toggle {
+        border-color: #00acee;
+        background: #00acee;
+    }
+    .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+        background-color: #00acee;
+    }
+    .header-top_agileits {
+       margin: 1em auto 0;
+    }
+    .carousel-caption {
+        min-height: 370px!important;
+        padding-top: 5.5em;
+    }
+    .carousel-indicators {
+        bottom: 16%;
+        left: 7%;
+    }
+   .team, .contact-w3layouts, .agile_testimonials, #last_bottom_agile, #pricing {
+        padding:3.5em 0;
+    }
+    .services {
+          padding: 3.5em 0 2em 0;
+    }
+    .agileits-service-info h5 {
+        font-size: 1.1em;
+        letter-spacing: 2px;
+        margin: 2em 0 3.3em 0;
+    }
+    .banner_header_top_wthree {
+        padding: 1em 0 0.5em 0;
+    }
+    .navbar-default .navbar-nav > li > a {
+        letter-spacing: 1px;
+        font-size: 1.1em;
+    }
+    #welcome {
+        padding: 3.5em 0 20em 0;
+    }
+    .agileits-w3layouts-map iframe {
+        height: 350px;
+    }
+}
+@media(max-width:736px){
+	.carousel-caption {
+        min-height: 382px!important;
+        padding-top: 5.5em;
+    }
+    .carousel-indicators {
+        bottom: 17%;
+        left: 7%;
+    }
+    .about h4 {
+        font-size: 1.4em;
+    }
+    
+}
+@media(max-width:667px){
+	.w3_agile_team_grid {
+        text-align: center;
+        float: left;
+        width: 50%;
+    }
+     .sale-w3ls h6 {
+        font-size: 2.2em;
+        line-height: 1.5em;
+        letter-spacing: 4px;
+    }
+    .carousel-caption p {
+        letter-spacing: 10px;
+        font-size: 0.9em;
+    }
+    .carousel-control {
+      top: 124px;
+    }
+    h4.agile_sub_tittle {
+        margin-bottom: 1em;
+        font-size: 1.4em;
+    }
+}
+@media(max-width:640px){
+	.agile_gallery_grid {
+        float: left;
+        padding: 0;
+        width: 49%;
+    }
+    .agile_tesimonials_content {
+        padding: 2em 1em;
+        width: 90%;
+        margin: 2em auto 0em;
+    }
+    #welcome {
+        padding: 3.5em 0 18em 0;
+    }
+    .footer-top_agile_w3l {
+       padding: 3em 0 3em;
+    }
+    .wthree_copy_right p {
+        margin-top: 40px;
+        padding: 40px 0 0;
+        font-size: 0.9em;
+        letter-spacing: 2px;
+        line-height: 1.9em;
+    }
+    .sale-w3ls {
+        min-height: 310px;
+    }
+    .sale-w3ls h6 {
+        font-size: 2em;
+        line-height: 1.5em;
+        letter-spacing: 4px;
+        padding-top: 2em;
+    }
+    .pricing-top p span {
+       font-size: 3em;
+    }
+    .pricing-top h3 {
+       font-size: 1.7em;
+    }
+ }
+@media(max-width:600px){
+	.w3l_header {
+        font-size: 2em;
+    }
+    #welcome h2 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+        line-height: 1.5em;
+        letter-spacing: 1px;
+    }
+    .agile_gallery_grid {
+        float: left;
+        padding: 0;
+        width: 44%;
+    }
+}
+@media(max-width:568px){
+	.carousel-caption h2, .carousel-caption h3 {
+        font-size: 2.2em;
+        font-weight: 300;
+        letter-spacing: 3px;
+    }
+    .agile_gallery_grid {
+        float: left;
+        padding: 0;
+        width: 100%;
+    }
+    #welcome {
+        padding: 3em 0 16em 0;
+    }
+    .w3layouts_mail_grid_left {
+        width: 100%;
+        margin-bottom: 1em;
+        float: left;
+    }
+    .pricing_inner_w3ls,.pricing_inner_w3ls:nth-child(3) {
+        width: 82%;
+        margin: 2% 8%;
+        float: left;
+    }
+    div#small-dialog {
+        padding: 20px;
+        width:90%;
+    }
+    p.sub i, p.add i {
+        width: 32px;
+        height: 32px;
+        margin-left: 5px;
+    }
+    
+}
+@media(max-width:480px){
+    .carousel-caption {
+        min-height: 330px!important;
+        padding-top: 3.5em;
+    }
+    .carousel-caption h2, .carousel-caption h3 {
+        font-size: 2em;
+        font-weight: 300;
+        letter-spacing: 2px;
+    }
+    .carousel-indicators {
+        bottom: 17%;
+        left: 11%;
+    }
+    #welcome {
+        padding: 2em 0 14em 0;
+    }
+    .sale-w3ls h6 {
+        font-size: 1.8em;
+        line-height: 1.5em;
+        letter-spacing: 4px;
+        padding-top: 2.6em;
+    }
+    .agileits-w3layouts-map iframe {
+        height: 250px;
+    }
+    .team, .contact-w3layouts, .agile_testimonials, #last_bottom_agile, #pricing {
+        padding: 3em 0;
+    }
+    .w3_agile_team_grids, .agile_wthree_inner_grids {
+        margin: 1.5em 0 0;
+    }
+    div#small-dialog {
+        padding: 20px;
+        width: 98%;
+    }
+}
+@media(max-width:440px){
+    .w3l_header {
+        font-size: 1.8em;
+    }
+    .w3_agile_team_grid h3 {
+        font-size: 1.1em;
+    }
+    .w3_agile_team_grid p {
+        margin-bottom: 1em;
+        font-size: 0.9em;
+    }
+    .carousel-caption h2, .carousel-caption h3 {
+        font-size: 1.8em;
+        font-weight: 300;
+        letter-spacing: 2px;
+    }
+    .carousel-caption {
+        min-height: 281px!important;
+        padding-top: 3.5em;
+    }
+    .carousel-indicators {
+        bottom: 17%;
+        left: 13%;
+    }
+    .agileits-logo h1 a {
+        font-size: 1em;
+    }
+    .services {
+        padding: 2.5em 0 1em 0;
+    }
+    .w3_agile_team_grid h3 {
+        font-size: 1em;
+    }
+    h4.agile_sub_tittle {
+        margin-bottom: 1em;
+        font-size: 1.2em;
+    }
+    .modal-info h4 {
+      font-size: 1.6em;
+    }
+    .modal-info h5 {
+      font-size: 1.2em;
+    }
+    p.sub {
+      font-size: 12px;
+    }
+    p.add {
+      font-size: 14px;
+    }
+    .footer-grid_wthree_info h3 {
+        font-size: 1.3em;
+        margin: 0 0 0.5em 0;
+    }
+    .footer-top_agile_w3l {
+        padding: 2em 0 2em;
+    }
+    .coupons {
+        padding: 2em 0;
+    }
+    ul.payment-sendbtns {
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+    .pop_up h4 {
+        font-size: 1.4em;
+    }
+    .pricing-top p span {
+        font-size: 2em;
+    }
+    .pricing-bottom {
+        padding: 2em 1em;
+    }
+    p.sub {
+        font-size: 12px;
+        line-height: 2em;
+    }
+}
+@media(max-width:414px){
+	.aboutimg img {
+        position: absolute;
+        left: 0%;
+        margin: 0 0 0 4em;
+        bottom: -87%;
+        width: 215px;
+        height: 215px;
+    }
+    #welcome h2 {
+        font-size: 1.8em;
+        margin-bottom: 0.5em;
+        line-height: 1.5em;
+        letter-spacing: 1px;
+    }
+    .w3l_header {
+        font-size: 1.6em;
+    }
+    .about h4 {
+        font-size: 1.2em;
+    }
+    .sale-w3ls h6 {
+        font-size: 1.6em;
+        line-height: 1.5em;
+        letter-spacing: 4px;
+        padding-top: 2.6em;
+    }
+    .sale-w3ls {
+        min-height: 273px;
+    }
+    .pricing-top h3 {
+        font-size: 1.4em;
+    }
+    h4.agile_sub_tittle {
+        margin-bottom: 1em;
+        font-size: 1.1em;
+    }
+    .carousel-caption h2, .carousel-caption h3 {
+        font-size: 1.6em;
+        font-weight: 300;
+        letter-spacing: 2px;
+    }
+}
+@media(max-width:384px){
+    .carousel-caption {
+        min-height: 240px!important;
+        padding-top: 2.5em;
+    }
+    .carousel-indicators {
+        bottom: 8%;
+        left: 15%;
+    }
+    .carousel-caption p {
+        margin: 1em 0 1.5em 0;
+    }
+    #welcome h2 {
+        font-size: 1.6em;
+        margin-bottom: 0.5em;
+        line-height: 1.5em;
+        letter-spacing: 1px;
+    }
+    #welcome {
+        padding: 2em 0 13.5em 0;
+    }
+    .agileits-service-info h5 {
+        font-size: 1em;
+        letter-spacing: 1px;
+        margin: 2em 0 3.3em 0;
+    }   
+    
+}
+@media(max-width:375px){
+	.agileits-service-info h5 {
+        font-size: 1em;
+        letter-spacing: 1px;
+        margin: 2em 0 3.3em 0;
+    }
+    .agileits-button.two a, .agileits-button a {
+        padding: 0.6em 1em;
+        font-size: 0.9em;
+    }
+    .carousel-caption h2, .carousel-caption h3 {
+        font-size: 1.5em;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+    .carousel-caption p {
+        letter-spacing: 7px;
+        font-size: 0.9em;
+    }
+    .w3_agile_team_grid {
+        float: left;
+        width: 100%;
+        margin-bottom:0.5em;
+    }
+    .w3l_header {
+        font-size: 1.5em;
+    }
+    .agileits-logo h1 a {
+        font-size: 0.8em;
+    }
+    .header-top_agileits {
+        margin: 0.5em auto 0;
+    }
+    .wthree_copy_right p {
+        margin-top: 25px;
+        padding: 16px 0 0;
+        font-size: 0.9em;
+        letter-spacing: 1px;
+        line-height: 1.9em;
+    }
+}
+@media(max-width:320px){
+	.about_agileinfo_grid_imgs img {
+        width: 100%;
+        margin: 2em 0 0 0em;
+        text-align: center;
+    }
+    .aboutimg img {
+        position: absolute;
+        left: 0%;
+        margin: 0 0 0 2em;
+        bottom: -72%;
+        width: 168px;
+        height: 168px;
+    }
+    #welcome {
+        padding: 2em 0 11em 0;
+    }
+    .menu_w3ls_agile_top_section,.sub-slider,.about_agileinfo {
+        padding: 0;
+    }
+    .sale-w3ls h6 {
+        font-size: 1.3em;
+        line-height: 1.5em;
+        letter-spacing: 4px;
+        padding-top: 2em;
+    }
+    .sale-w3ls {
+        min-height: 206px;
+    }
+    .payment-sendbtns input[type="reset"] {
+       padding: 12px 36px;
+    }
+    #welcome h2 {
+        font-size: 1.4em;
+        margin-bottom: 0.5em;
+        line-height: 1.5em;
+        letter-spacing: 1px;
+    }
+    .w3l_header {
+        font-size: 1.4em;
+        line-height: 1.4em;
+    }
+    .banner_header_top_wthree {
+        padding: 0.5em 0 0em 0;
+    }
+    .carousel-control .icon-next, .carousel-control .glyphicon-chevron-right {
+        right: 27%;
+    }
+    .carousel-caption h2, .carousel-caption h3 {
+        font-size: 1.4em;
+        font-weight: 300;
+        letter-spacing: 0px;
+    }
+ }
+
+/*-- //responsive media queries --*/
