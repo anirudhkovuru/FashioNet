@@ -11,7 +11,8 @@ In this step, the **BeautifulSoup** module of python is used to access the posit
 [More info](./web-scraping)
 
 ### 2. Data Preprocessing
-In this step, the data is manually run through checks to remove any discrepancies. This is to make sure the dataset is homogenous and all the features of the images remain the same. For example :- An image with multiple shirts would have to be removed from a dataset where every images has only a single shirt.
+In this step, the data is manually run through checks to remove any discrepancies. This is to make sure the dataset is homogenous and all the features of the images remain the same.\
+**For example** :- An image with multiple shirts would have to be removed from a dataset where every images has only a single shirt.
 
 ### 3. Training and using the GANs
 In this step, we use the GANs to generate new images of shirts from noise. Two types of GANs have been used as stated above.\
