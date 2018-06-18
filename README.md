@@ -3,6 +3,8 @@ This project focuses on using different types of **General Adversarial Networks*
 - DCGAN
 - SRGAN
 
+**Note: All of the above code (except the frontend) has been written keeping in mind that these would run in google colaboratory's python environment.**
+
 ## Steps of the project
 This project involves 4 steps -
 
