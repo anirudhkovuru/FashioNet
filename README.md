@@ -5,7 +5,7 @@ Two main types of GANs are given focus in this project namely :
 - DCGAN
 - SRGAN
 
-# Steps of the project
+## Steps of the project
 This project involves 4 steps -
 
-# # Web Scraping
+### Web Scraping
