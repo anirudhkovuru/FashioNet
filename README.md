@@ -7,7 +7,7 @@ This project focuses on using different types of **General Adversarial Networks*
 This project involves 4 steps -
 
 ### 1. Web Scraping
-In this step, the **BeautifulSoup** module of python is used to access the position of the required image within the webpage. Using the **urlretrieve** function of the **urllib2** module, the image is extracted and then stored on our local machine. This step helps us obtain our training and testing datasets.
+In this step, the **BeautifulSoup** module of python is used to access the position of the required image within the webpage. Using the **urlretrieve** function of the **urllib2** module, the image is extracted and then stored on our local machine. This step helps us obtain our training and testing datasets. [More info](./web-scraping)
 
 ### 2. Data Preprocessing
 In this step, the data is manually run through checks to remove any discrepancies. This is to make sure the dataset is homogenous and all the features of the images remain the same. For example :- An image with multiple shirts would have to be removed from a dataset where every images has only a single shirt.
