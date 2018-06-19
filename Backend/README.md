@@ -19,25 +19,23 @@ This leads to a zero sum game where the policeman tries to improve his ability t
 ## Modules used
 - Keras
 - Tensorflow
-- numpy
-- scipy
-
+- Numpy
+- Scipy
+\
 ## Deep Convolutional GAN
 This version of the GAN follows the concept of using convolutional layers for discriminating and a mix of dense, upsampling and deconvolutional layers for the generator.
 This was chosen as it gave much smoother results even with a smaller number of training epochs.\
 The main drawback however, is that the resolution cannot go beyond 64x64 as any further than this requires more GPU memory than anything available in the world as of today.
 
 ### The discriminator
-\
 ![DCGAN discriminator](./display-images/dc-discrim.png)
 
 ### The generator
-\
 ![DCGAN generator](./display-images/dc-gen.png)
 \
 We based ours off of the following implementation.\
 [DCGAN implementation in keras](https://github.com/eriklindernoren/Keras-GAN/blob/master/dcgan/dcgan.py)
-
+\
 ## Super Resolution GAN
 This GAN helps increase the resolution of an image, in our case a 64x64 into a 256x256 image. Hence, the name Super Resolution.
 It consists of a generator who takes the low resolution image as an input and returns the image in a higher resolution.\
@@ -53,6 +51,6 @@ We also use a **pre-trained VGG19 net** which helps extract the features of the 
 The generator consists of residual block modules and upsampling using deconvolution layers.\
 \
 ![SRGAN generator](./display-images/sr-discrim.png)
-
+\
 We based ours off of the following implementation.\
 [SRGAN implementation in keras](https://github.com/eriklindernoren/Keras-GAN/tree/master/srgan)
