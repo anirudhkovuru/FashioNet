@@ -21,7 +21,7 @@ This leads to a zero sum game where the policeman tries to improve his ability t
 - Tensorflow
 - Numpy
 - Scipy
- \
+
 ## Deep Convolutional GAN
 This version of the GAN follows the concept of using convolutional layers for discriminating and a mix of dense, upsampling and deconvolutional layers for the generator.
 This was chosen as it gave much smoother results even with a smaller number of training epochs.\
@@ -35,7 +35,7 @@ The main drawback however, is that the resolution cannot go beyond 64x64 as any 
 \
 We based ours off of the following implementation.\
 [DCGAN implementation in keras](https://github.com/eriklindernoren/Keras-GAN/blob/master/dcgan/dcgan.py)
- \
+
 ## Super Resolution GAN
 This GAN helps increase the resolution of an image, in our case a 64x64 into a 256x256 image. Hence, the name Super Resolution.
 It consists of a generator who takes the low resolution image as an input and returns the image in a higher resolution.\
