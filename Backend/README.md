@@ -28,11 +28,14 @@ This was chosen as it gave much smoother results even with a smaller number of t
 The main drawback however, is that the resolution cannot go beyond 64x64 as any further than this requires more GPU memory than anything available in the world as of today.
 
 ### The discriminator
+\
 ![DCGAN discriminator](./display-images/dc-discrim.png)
 
 ### The generator
+\
 ![DCGAN generator](./display-images/dc-gen.png)
-
+\
+We based ours off of the following implementation.\
 [DCGAN implementation in keras](https://github.com/eriklindernoren/Keras-GAN/blob/master/dcgan/dcgan.py)
 
 ## Super Resolution GAN
@@ -44,11 +47,12 @@ The SRGAN resolved the drawback that existed with using the DCGAN, which was its
 The discriminator consists of discriminator modules each of which contains a convolutional layer on which Leaky ReLU and batch normalization functions are applied.
 We also use a **pre-trained VGG19 net** which helps extract the features of the given high resolution images. These features are given to the discriminator net to process instead of the entire image.\
 \
-\
 ![SRGAN discriminator](./display-images/sr-gen.png)
 
 ### The generator
 The generator consists of residual block modules and upsampling using deconvolution layers.\
+\
 ![SRGAN generator](./display-images/sr-discrim.png)
 
+We based ours off of the following implementation.\
 [SRGAN implementation in keras](https://github.com/eriklindernoren/Keras-GAN/tree/master/srgan)
