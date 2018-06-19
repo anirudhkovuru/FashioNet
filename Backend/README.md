@@ -42,11 +42,11 @@ The SRGAN resolved the drawback that existed with using the DCGAN, which was its
 
 ### The discriminator
 The discriminator consists of discriminator modules each of which contains a convolutional layer on which Leaky ReLU and batch normalization functions are applied.
-We also use a **pre-trained VGG19 net** which helps extract the features of the given high resolution images. These features are given to the discriminator net to process instead of the entire image.
+We also use a **pre-trained VGG19 net** which helps extract the features of the given high resolution images. These features are given to the discriminator net to process instead of the entire image.\
 ![SRGAN discriminator](./display-images/sr-gen.png)
 
 ### The generator
-The generator consists of residual block modules and upsampling using deconvolution layers.
+The generator consists of residual block modules and upsampling using deconvolution layers.\
 ![SRGAN generator](./display-images/sr-discrim.png)
 
 [SRGAN implementation in keras](https://github.com/eriklindernoren/Keras-GAN/tree/master/srgan)
