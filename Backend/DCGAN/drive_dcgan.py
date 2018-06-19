@@ -239,10 +239,10 @@ class DCGAN():
 if __name__ == '__main__':
     # Create DCGAN object
     dcgan = DCGAN()
-    dcgan.generator = load_model('drive/ZML/FashioNet/saved-models/dcgenerator-model(1).h5')
-    dcgan.discriminator = load_model('drive/ZML/FashioNet/saved-models/dcdiscriminator-model(1).h5')
+    dcgan.generator = load_model('drive/ZML/FashioNet/saved-models/dcgenerator-model.h5')
+    dcgan.discriminator = load_model('drive/ZML/FashioNet/saved-models/dcdiscriminator-model.h5')
     # Train the DCGAN
     dcgan.train(epochs=9000, batch_size=32, save_interval=20)
     # Save the generator-discriminator combined model
-    dcgan.generator.save("drive/ZML/FashioNet/saved-models/dcgenerator-model(1).h5")
-    dcgan.discriminator.save("drive/ZML/FashioNet/saved-models/dcdiscriminator-model(1).h5")
+    dcgan.generator.save("drive/ZML/FashioNet/saved-models/dcgenerator-model.h5")
+    dcgan.discriminator.save("drive/ZML/FashioNet/saved-models/dcdiscriminator-model.h5")

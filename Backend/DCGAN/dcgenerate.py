@@ -8,7 +8,7 @@ from glob import glob
 gan = DCGAN()
 
 print("Loading model...")
-gan.generator = load_model('drive/ZML/FashioNet/saved-models/dcgenerator-model(1).h5')
+gan.generator = load_model('drive/ZML/FashioNet/saved-models/dcgenerator-model.h5')
 print("Model loaded.")
 
 for i in range(30):
