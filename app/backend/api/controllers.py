@@ -1,28 +1,47 @@
-from dcgan import DCGAN
+from flask import Blueprint, request, session, jsonify, render_template, redirect
+from sqlalchemy.exc import IntegrityError
+
 from keras.models import load_model
 import numpy as np
 import matplotlib.pyplot as plt
-from flask import Flask, jsonify, request
 import tensorflow as tf
 
-app = Flask(__name__)
-gan = None
+from app import db
+from app.backend.dcgan import DCGAN
+from app.backend.srgan import SRGAN
 
+mod_models = Blueprint('models', __name__, url_prefix='/api')
 
 def load_gan():
-    global gan
+    global dcgan
+    global srgan
+
     # calling the constructor of the DCGAN
-    gan = DCGAN()
-    # Loading the saved trained model
-    gan.generator = load_model("saved-models/generator-model.h5")
-    global graph
+    dcgan = DCGAN()
+    # calling the constructor of the SRGAN
+    srgan = SRGAN()
+
+    # Loading the saved trained models
+    dcgan.generator = load_model("../saved-models/dcgenerator-model.h5")
+    srgan.generator = load_model("../saved-models/srgenerator-model.h5")
+
     # initializing a graph to help with generating the images
+    global graph
     graph = tf.get_default_graph()
 
-@app.route("/", methods = ['GET','POST'])
+@mod_models.route("/", methods = ['GET', 'POST'])
+def display_images():
+    pass
+
+
+@mod_models.route("/display", methods = ['GET','POST'])
 def get_images():
+
+    # Loading the GAN models
+    load_gan()
     json_image = {}
     num = request.args.get('num')
+
     for i in range(int(num)):
         # input noise for the generator
         noise = np.random.normal(0, 1, (1, 200))
@@ -35,8 +54,3 @@ def get_images():
         json_image["image"+str(i+1)] = gen_imgs
 
     return jsonify(json_image)
-
-
-if __name__ == '__main__':
-    load_gan()
-    app.run(debug = True, host = '0.0.0.0')

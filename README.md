@@ -20,6 +20,6 @@ In this step, the data is manually run through checks to remove any discrepancie
 In this step, we use the GANs to generate new images of shirts from noise. Two types of GANs have been used as stated above.\
 These have been implemented in python using the **keras** library with a **tensorflow** backend.\
 The GANs together form a Stacked GAN where the output of the DCGAN becomes the input to the SRGAN.\
-[More info](./Backend)
+[More info](./app/backend)
 
 ### 4. Integrating with the web for display
