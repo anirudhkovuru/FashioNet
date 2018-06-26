@@ -31,7 +31,7 @@ def load_gan():
 
 @mod_models.route("/", methods = ['GET', 'POST'])
 def display_images():
-    pass
+    if 
 
 
 @mod_models.route("/display", methods = ['GET','POST'])
