@@ -26,5 +26,5 @@ The GANs together form a Stacked GAN where the output of the DCGAN becomes the i
 In this step, the web interface for the images is provided. Images are generated at the server and sent to the user for viewing.
 The user can request the generation of more images.
 The user can also download images which he likes and wishes to use for brainstorming new designs.\
-The web based framework of this application is built in python using the **flask** library along with html and javascript.
+The web based framework of this application is built in python using the **flask** library along with html and javascript.\
 [More info](./app/app)
