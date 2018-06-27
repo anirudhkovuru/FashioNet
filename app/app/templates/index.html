@@ -17,12 +17,12 @@ Smartphone Compatible web template"/>
 		}
 		</script>
 	<!--//tags href has its own css style folders-->
-	<link href="css/darkbox.css" rel="stylesheet" type="text/css" media="all" />
-	<link rel="stylesheet" href="css/owl.carousel.css" type="text/css" media="all">
-	<link href="css/wimmViewer.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/darkbox.css') }}" rel="stylesheet" type="text/css" media="all" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.css') }}" type="text/css" media="all">
+	<link href="{{ url_for('static', filename='css/wimmViewer.css') }}" rel="stylesheet" type="text/css">
+	<link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{{ url_for('static', filename='css/font-awesome.css') }}" rel="stylesheet">
 
 	<!-- //for bootstrap working -->
 	<link href="//fonts.googleapis.com/css?family=Work+Sans:200,300,400,500,600,700" rel="stylesheet">
@@ -139,9 +139,9 @@ Smartphone Compatible web template"/>
 						</div>
 					</div>
 					<div class="col-md-6 about_agileinfo_grid_imgs">
-						<img src="images/ab.jpg" alt="" />
+						<img src="{{ url_for('static' , filename='images/ab.jpg') }}" alt="" />
 						<div class="aboutimg">
-							<img src="images/ab2.jpg" alt="" />
+							<img src="{{ url_for('static' , filename='images/ab2.jpg') }}" alt="" />
 						</div>
 					</div>
 					<div class="clearfix"></div>
@@ -158,7 +158,7 @@ Smartphone Compatible web template"/>
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 						<div class="modal-info">
 							<h4>FashioNet</h4>
-							<img src="images/banner2.jpg" alt=" " class="img-responsive" />
+							<img src="{{ url_for('static' , filename='images/banner2.jpg') }}" alt=" " class="img-responsive" />
 							<h5>Sub Heading here</h5>
 							<p class="para-agileits-w3layouts">Duis sit amet nisi quis leo fermentum vestibulum vitae eget augue. Nulla quam nunc, vulputate id urna at, tempor tincidunt
 								metus. Sed feugiat quam nec mauris mattis malesuada.</p>
@@ -246,7 +246,7 @@ Smartphone Compatible web template"/>
 				<h3 class="w3l_header w3_agileits_header two">Amazing <span>Team</span></h3>
 				<div class="w3_agile_team_grids">
 					<div class="col-md-3 w3_agile_team_grid">
-						<img src="images/t2.jpg" alt=" " class="img-responsive" />
+						<img src="{{ url_for('static' , filename='images/t2.jpg') }}" alt=" " class="img-responsive" />
 						<h3>Amanda Seylon</h3>
 						<p>Designer</p>
 						<ul class="footer_list_icons team_icons_agile">
@@ -258,7 +258,7 @@ Smartphone Compatible web template"/>
 						</ul>
 					</div>
 					<div class="col-md-3 w3_agile_team_grid">
-						<img src="images/t1.jpg" alt=" " class="img-responsive" />
+						<img src="{{ url_for('static' , filename='images/t1.jpg') }}" alt=" " class="img-responsive" />
 						<h3>Laura Mark</h3>
 						<p>Designer</p>
 						<ul class="footer_list_icons team_icons_agile">
@@ -270,7 +270,7 @@ Smartphone Compatible web template"/>
 						</ul>
 					</div>
 					<div class="col-md-3 w3_agile_team_grid">
-						<img src="images/t3.jpg" alt=" " class="img-responsive" />
+						<img src="{{ url_for('static' , filename='images/t3.jpg') }}" alt=" " class="img-responsive" />
 						<h3>Lusiana James</h3>
 						<p>Designer</p>
 						<ul class="footer_list_icons team_icons_agile">
@@ -282,7 +282,7 @@ Smartphone Compatible web template"/>
 						</ul>
 					</div>
 					<div class="col-md-3 w3_agile_team_grid">
-						<img src="images/t4.jpg" alt=" " class="img-responsive" />
+						<img src="{{ url_for('static' , filename='images/t4.jpg') }}" alt=" " class="img-responsive" />
 						<h3>John Mark</h3>
 						<p>Designer</p>
 						<ul class="footer_list_icons team_icons_agile">
@@ -572,7 +572,7 @@ Smartphone Compatible web template"/>
 								<div class="item">
 									<div class="agile_tesimonials_content">
 										<div class="about-midd-main">
-											<img class="agile-img" src="images/c1.png" alt=" " class="img-responsive">
+											<img class="agile-img" src="{{ url_for('static' , filename='images/c1.png') }}" alt=" " class="img-responsive">
 											<h4>Smith Kevin</h4>
 											<p> Lorem ipsum adipiscing elit, sed do eiusmod idunt ut labore. sed do eiusmod tempor incididunt.</p>
 										</div>
@@ -581,7 +581,7 @@ Smartphone Compatible web template"/>
 								<div class="item">
 									<div class="agile_tesimonials_content">
 										<div class="about-midd-main">
-											<img class="agile-img" src="images/c2.png" alt=" " class="img-responsive">
+											<img class="agile-img" src="{{ url_for('static' , filename='images/c2.png') }}" alt=" " class="img-responsive">
 											<h4>Laura Hill</h4>
 											<p> Lorem ipsum adipiscing elit, sed do eiusmod idunt ut labore. sed do eiusmod tempor incididunt.</p>
 										</div>
@@ -590,7 +590,7 @@ Smartphone Compatible web template"/>
 								<div class="item">
 									<div class="agile_tesimonials_content">
 										<div class="about-midd-main">
-											<img class="agile-img" src="images/c3.png" alt=" " class="img-responsive">
+											<img class="agile-img" src="{{ url_for('static' , filename='images/c3.png') }}" alt=" " class="img-responsive">
 											<h4>Thomson Doe</h4>
 											<p> Lorem ipsum adipiscing elit, sed do eiusmod idunt ut labore. sed do eiusmod tempor incididunt.</p>
 										</div>
@@ -736,10 +736,10 @@ Hyderabad, Telangana</p>
 				<!-- //footer -->
 			<a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 			<!-- js -->
-			<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+			<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-2.1.4.min.js') }}"></script>
 		   <!-- start-smoth-scrolling -->
-			<script type="text/javascript" src="js/move-top.js"></script>
-			<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+			<script type="text/javascript" src="{{ url_for('static', filename='js/move-top.js') }}"></script>
+			<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.easing.min.js') }}"></script>
 <script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){
@@ -767,8 +767,8 @@ Hyderabad, Telangana</p>
 		});
 	</script>
 	<!-- //smooth-scrolling-of-move-up -->
-			<script type="text/javascript" src="js/darkbox.js"></script>
-			<script src="js/wimmViewer.js"></script>
+			<script type="text/javascript" src="{{ url_for('static', filename='js/darkbox.js') }}"></script>
+			<script src="{{ url_for('static', filename='js/wimmViewer.js') }}"></script>
 			<script>
 				$(function () {
 					$('#slider1').WimmViewer({
@@ -788,14 +788,14 @@ Hyderabad, Telangana</p>
 			</script>
 			<!-- for pricing -->
 			<!-- Pricing-Popup-Box-JavaScript -->
-			<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+			<script src="{{ url_for('static', filename='js/jquery.magnific-popup.js') }}" type="text/javascript"></script>
 			<!-- //Pricing-Popup-Box-JavaScript -->
 			<!-- carousel -->
-			<script src="js/owl.carousel.js"></script>
+			<script src="{{ url_for('static', filename='js/owl.carousel.js') }}"></script>
 			<!-- //carousel -->
 			<!-- for bootstrap working -->
-			<script type="text/javascript" src="js/customJquery.js"></script>
-			<script type="text/javascript" src="js/bootstrap.js"></script>
+			<script type="text/javascript" src="{{ url_for('static', filename='js/customJquery.js') }}"></script>
+			<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
 </body>
 
 </html>

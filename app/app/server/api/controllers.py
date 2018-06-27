@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 
 from app import db
-from app.backend.dcgan import DCGAN
-from app.backend.srgan import SRGAN
+from app.server.dcgan.drive_dcgan import DCGAN
+from app.server.srgan.drive_srgan import SRGAN
 
 mod_models = Blueprint('models', __name__, url_prefix='/api')
 
@@ -31,8 +31,7 @@ def load_gan():
 
 @mod_models.route("/", methods = ['GET', 'POST'])
 def display_images():
-    pass
-
+    return render_template("index.html")
 
 @mod_models.route("/display", methods = ['GET','POST'])
 def get_images():

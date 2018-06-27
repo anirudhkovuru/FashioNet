@@ -48,7 +48,7 @@ def requires_auth(f):
 
 
 #ONLY HAVE TO ADD LINES TO NEXT TO PARAS AS WE ADD OBJECTS
-from app.backend.api import mod_models
+from app.server.api.controllers import mod_models
 
 # Register blueprint(s)
 app.register_blueprint(mod_models)
