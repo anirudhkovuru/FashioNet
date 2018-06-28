@@ -1,4 +1,4 @@
-from flask import Blueprint, request, session, jsonify, render_template, redirect
+from flask import Blueprint, request, session, jsonify, render_template, redirect, url_for
 from sqlalchemy.exc import IntegrityError
 
 from keras.models import load_model
@@ -29,17 +29,19 @@ def load_gan():
     global graph
     graph = tf.get_default_graph()
 
-@mod_models.route("/", methods = ['GET', 'POST'])
-def display_images():
+@mod_models.route("/", methods = ['GET'])
+def display():
     return render_template("index.html")
 
-@mod_models.route("/display", methods = ['GET','POST'])
-def get_images():
+@mod_models.route("/display", methods = ['GET'])
+def get_image_display():
+    return render_template("display.html")
 
+@mod_models.route("/get_images", methods = ['POST'])
+def get_images():
     # Loading the GAN models
     load_gan()
     json_image = {}
-    num = request.args.get('num')
 
     for i in range(int(num)):
         # input noise for the generator
