@@ -1,5 +1,5 @@
 # FashioNet
-This project focuses on using different types of **General Adversarial Networks** or GAN to create new shirt designs. The GAN helps create new designs by generating new shirts from noise signals after being trained over a dataset of shirts. Two main types of GANs are given focus in this project namely :
+This project focuses on using different types of **Generative Adversarial Networks** or GAN to create new shirt designs. The GAN helps create new designs by generating new shirts from noise signals after being trained over a dataset of shirts. Two main types of GANs are given focus in this project namely :
 - DCGAN
 - SRGAN
 
