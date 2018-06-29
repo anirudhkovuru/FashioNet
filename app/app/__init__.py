@@ -9,7 +9,7 @@ from flask_mail import Mail, Message
 from functools import wraps
 
 # Define the WSGI application object
-app = Flask(__name__)
+app = Flask(__name__, static_url_path="/static")
 
 
 # Configurations

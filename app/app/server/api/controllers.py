@@ -5,8 +5,10 @@ from keras.models import load_model
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
+import os
 
 from app import db
+import app
 from app.server.dcgan.drive_dcgan import DCGAN
 from app.server.srgan.drive_srgan import SRGAN
 
@@ -22,8 +24,8 @@ def load_gan():
     srgan = SRGAN()
 
     # Loading the saved trained models
-    dcgan.generator = load_model("../saved-models/dcgenerator-model.h5")
-    srgan.generator = load_model("../saved-models/srgenerator-model.h5")
+    dcgan.generator = load_model(os.path.join(app.static_folder, 'saved-models') + "dcgenerator-model.h5")
+    srgan.generator = load_model(os.path.join(app.static_folder, 'saved-models') + "srgenerator-model.h5")
 
     # initializing a graph to help with generating the images
     global graph
@@ -40,18 +42,49 @@ def get_image_display():
 @mod_models.route("/get_images", methods = ['POST'])
 def get_images():
     # Loading the GAN models
-    load_gan()
-    json_image = {}
+    num = request.form["number"]
+    try:
+        unique = request.form["unique"]
+    except:
+        unique = "off"
 
-    for i in range(int(num)):
-        # input noise for the generator
-        noise = np.random.normal(0, 1, (1, 200))
-        # using the initialized graph to generate new images from the input noise
-        with graph.as_default():
-            gen_imgs = gan.generator.predict(noise)
-        gen_imgs = 0.5 * gen_imgs + 0.5
-        # translating into a list and converting into a JSON to send as response
-        gen_imgs = gen_imgs.tolist()
-        json_image["image"+str(i+1)] = gen_imgs
+    #print(num)
+    #print(unique)
 
-    return jsonify(json_image)
+    num = int(num)
+
+    if unique == "on":
+        load_gan()
+        for i in range(num):
+            # input noise for the generator
+            noise = np.random.normal(0, 1, (1, 200))
+
+            # using the initialized graph to generate new images from the input noise
+            with graph.as_default():
+                gen_imgs = dcgan.generator.predict(noise)
+                final_imgs = srgan.generator.predict(gen_imgs)
+
+            final_imgs = 0.5 * final_imgs + 0.5
+            scipy.misc.imsave(os.path.join(app.static_folder, 'final-images') + str(i) + '.jpg', final_imgs[0])
+
+    elif unique == "off":
+        actualNum = len([name for name in os.listdir(os.path.join(app.static_folder, 'final-images')) if os.path.isfile(name)])
+        if actualNum >= num:
+            return render_template("display.html")
+        else:
+            load_gan()
+            for i in range(actualNum, num):
+                # input noise for the generator
+                noise = np.random.normal(0, 1, (1, 200))
+
+                # using the initialized graph to generate new images from the input noise
+                with graph.as_default():
+                    gen_imgs = dcgan.generator.predict(noise)
+                    final_imgs = srgan.generator.predict(gen_imgs)
+
+                final_imgs = 0.5 * final_imgs + 0.5
+                scipy.misc.imsave(os.path.join(app.static_folder, 'final-images') + str(i) + '.jpg', final_imgs[0])
+
+    dirLen = len([name for name in os.listdir(os.path.join(app.static_folder, 'final-images')) if os.path.isfile(name)])
+
+    return render_template("display.html", number = dirLen)

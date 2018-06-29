@@ -1,6 +1,34 @@
 {% extends "index.html" -%}
 {% block content -%}
 
+<!-- //testimonials-->
+      <!--contact-->
+      <div class="contact-w3layouts" id="contact">
+        <div class="container">
+          <h3 class="w3l_header w3_agileits_header two">Control <span>Panel</span></h3>
+          <div class="agile_wthree_inner_grids">
+            <div class="col-md-6 contact-agileits-w3layouts-left">
+              <h4 class="agile_sub_tittle">Instructions</h4>
+              <p class="para-agileits-w3layouts">Specify the number of images needed. Use the "Unique?" option
+              to generate an entirely new set from scratch. However remember you will lose the
+              images you previously loaded.</p>
+            </div>
+            <div class="col-md-6 mail-grid1-form ">
+              <h4 class="agile_sub_tittle">Number of Images</h4>
+              <form action="{{ url_for('models.get_images') }}" method="post">
+                <input type="text" name="number" placeholder="" required="" />
+                <input type="checkbox" name="unique" style="margin-bottom:1em;"><span class="agile_sub_tittle2">  Unique?</span></input>
+                <br/>
+                <br/>
+                <input type="submit" value="Submit" />
+              </form>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+      <!--//contact-->
+
   <!-- /gallery -->
   <div class="gallery" id="gallery">
     <h3 class="w3l_header w3_agileits_header two">Our <span>Designs</span></h3>
@@ -8,86 +36,39 @@
       <div class="agile_port_w3ls_info">
         <div class="col-md-6 agile_gallery_grid_left">
           <div class="col-md-6 agile_gallery_grid">
-            <img src="images/0.jpg" data-darkbox="images/0.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
+            <img src="{{ url_for('static' , filename='final-images/0.jpg') }}" data-darkbox="{{ url_for('static' , filename='final-images/0.jpg') }}" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
           </div>
           <div class="col-md-6 agile_gallery_grid">
-            <img src="images/1.jpg" data-darkbox="images/1.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
+            <img src="{{ url_for('static' , filename='final-images/1.jpg') }}" data-darkbox="{{ url_for('static' , filename='final-images/1.jpg') }}" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
           </div>
           <div class="col-md-6 agile_gallery_grid">
-            <img src="images/2.jpg" data-darkbox="images/2.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
+            <img src="{{ url_for('static' , filename='final-images/2.jpg') }}" data-darkbox="{{ url_for('static' , filename='final-images/2.jpg') }}" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
           </div>
           <div class="col-md-6 agile_gallery_grid">
-            <img src="images/2.jpg" data-darkbox="images/2.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="images/2.jpg" data-darkbox="images/2.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="images/2.jpg" data-darkbox="images/2.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="images/2.jpg" data-darkbox="images/2.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="images/2.jpg" data-darkbox="images/2.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="images/2.jpg" data-darkbox="images/2.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="images/2.jpg" data-darkbox="images/2.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="images/2.jpg" data-darkbox="images/2.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="images/2.jpg" data-darkbox="images/2.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
+            <img src="{{ url_for('static' , filename='final-images/3.jpg') }}" data-darkbox="{{ url_for('static' , filename='final-images/3.jpg') }}" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
           </div>
         </div>
-        <div class="col-md-6 agile_gallery_grid_left">
 
+          <div class="col-md-6 agile_gallery_grid_left">
           <div class="col-md-6 agile_gallery_grid">
-            <img src="images/3.jpg" data-darkbox="images/3.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
+            <img src="{{ url_for('static' , filename='final-images/4.jpg') }}" data-darkbox="{{ url_for('static' , filename='final-images/4.jpg') }}" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
           </div>
           <div class="col-md-6 agile_gallery_grid">
-            <img src="images/4.jpg" data-darkbox="images/4.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
+            <img src="{{ url_for('static' , filename='final-images/5.jpg') }}" data-darkbox="{{ url_for('static' , filename='final-images/5.jpg') }}" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
           </div>
           <div class="col-md-6 agile_gallery_grid">
-            <img src="images/5.jpg" data-darkbox="images/5.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
+            <img src="{{ url_for('static' , filename='final-images/6.jpg') }}" data-darkbox="{{ url_for('static' , filename='final-images/6.jpg') }}" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
           </div>
           <div class="col-md-6 agile_gallery_grid">
-            <img src="images/6.jpg" data-darkbox="images/6.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="images/7.jpg" data-darkbox="images/7.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="images/8.jpg" data-darkbox="images/8.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="images/9.jpg" data-darkbox="images/9.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="images/10.jpg" data-darkbox="images/10.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="images/11.jpg" data-darkbox="images/11.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="images/12.jpg" data-darkbox="images/12.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="images/13.jpg" data-darkbox="images/13.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="images/14.jpg" data-darkbox="images/14.jpg" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
+            <img src="{{ url_for('static' , filename='final-images/7.jpg') }}" data-darkbox="{{ url_for('static' , filename='final-images/7.jpg') }}" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
           </div>
         </div>
+      </div>
         <div class="clearfix"> </div>
 
       </div>
       <!-- //gallery -->
     </div>
     </div>
-  </div>
+
 {% endblock content -%}
