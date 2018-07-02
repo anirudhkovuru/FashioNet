@@ -16,6 +16,13 @@ from app.server.srgan.drive_srgan import SRGAN
 
 mod_models = Blueprint('models', __name__, url_prefix='/api')
 
+global dcgan
+dcgan = None
+global srgan
+srgan = None
+global graph
+graph = None
+
 def load_gan():
     global dcgan
     global srgan
@@ -68,7 +75,9 @@ def get_images():
         for file in filenames:
             os.remove(os.path.join(os.path.join(app.static_folder, 'final-images/'), file))
 
-        load_gan()
+        if dcgan == None or srgan == None or graph == None:
+            load_gan()
+
         for i in range(num):
             # input noise for the generator
             noise = np.random.normal(0, 1, (1, 200))
@@ -92,7 +101,9 @@ def get_images():
 
         else:
             print("Extra images needed...")
-            load_gan()
+            if dcgan == None or srgan == None or graph == None:
+                load_gan()
+
             for i in range(actualNum, num):
                 # input noise for the generator
                 noise = np.random.normal(0, 1, (1, 200))
