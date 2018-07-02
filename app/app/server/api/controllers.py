@@ -97,7 +97,6 @@ def get_images():
 
         if actualNum >= num:
             print("Required number already there...")
-            return render_template("display.html")
 
         else:
             print("Extra images needed...")

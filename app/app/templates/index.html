@@ -36,6 +36,7 @@ Smartphone Compatible web template"/>
 <body>
 	<!-- header -->
 	<div class="header" id="home">
+		{% block header %}
 		<div class="banner_header_top_wthree">
 			<div class="agileits-logo">
 				<h1><a href="index.html"> <i class="fa fa-scissors" aria-hidden="true"></i> FashioNet</a></h1>
@@ -78,6 +79,7 @@ Smartphone Compatible web template"/>
 				</div>
 			</div>
 		</div>
+		{% endblock header %}
 	</div>
 
 	{% block content %}
