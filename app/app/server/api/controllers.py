@@ -6,9 +6,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import os
+import scipy
+import glob
 
 from app import db
-import app
+from app import app
 from app.server.dcgan.drive_dcgan import DCGAN
 from app.server.srgan.drive_srgan import SRGAN
 
@@ -24,8 +26,8 @@ def load_gan():
     srgan = SRGAN()
 
     # Loading the saved trained models
-    dcgan.generator = load_model(os.path.join(app.static_folder, 'saved-models') + "dcgenerator-model.h5")
-    srgan.generator = load_model(os.path.join(app.static_folder, 'saved-models') + "srgenerator-model.h5")
+    dcgan.generator = load_model(os.path.join(app.static_folder, 'saved-models/') + "dcgenerator-model.h5")
+    srgan.generator = load_model(os.path.join(app.static_folder, 'saved-models/') + "srgenerator-model.h5")
 
     # initializing a graph to help with generating the images
     global graph
@@ -37,7 +39,13 @@ def display():
 
 @mod_models.route("/display", methods = ['GET'])
 def get_image_display():
-    return render_template("display.html")
+    filenames = glob.glob1(os.path.join(app.static_folder, 'final-images/'), "*.jpg")
+    dirLen = len(filenames)
+    if dirLen % 2 == 0:
+        dirLen1 = dirLen // 2
+    else:
+        dirLen1 = dirLen // 2 + 1
+    return render_template("display.html", number1 = dirLen1, number2 = dirLen, filenames = filenames)
 
 @mod_models.route("/get_images", methods = ['POST'])
 def get_images():
@@ -54,6 +62,12 @@ def get_images():
     num = int(num)
 
     if unique == "on":
+        print("Unique images needed...")
+        filenames = glob.glob1(os.path.join(app.static_folder, 'final-images/'), "*.jpg")
+
+        for file in filenames:
+            os.remove(os.path.join(os.path.join(app.static_folder, 'final-images/'), file))
+
         load_gan()
         for i in range(num):
             # input noise for the generator
@@ -65,13 +79,19 @@ def get_images():
                 final_imgs = srgan.generator.predict(gen_imgs)
 
             final_imgs = 0.5 * final_imgs + 0.5
-            scipy.misc.imsave(os.path.join(app.static_folder, 'final-images') + str(i) + '.jpg', final_imgs[0])
+            scipy.misc.imsave(os.path.join(app.static_folder, 'final-images/') + str(i) + '.jpg', final_imgs[0])
+            print(str(i) + ".jpg created and saved.")
 
     elif unique == "off":
-        actualNum = len([name for name in os.listdir(os.path.join(app.static_folder, 'final-images')) if os.path.isfile(name)])
+        actualNum = len(glob.glob1(os.path.join(app.static_folder, 'final-images/'), "*.jpg"))
+        print("Actual number of images = " + str(actualNum))
+
         if actualNum >= num:
+            print("Required number already there...")
             return render_template("display.html")
+
         else:
+            print("Extra images needed...")
             load_gan()
             for i in range(actualNum, num):
                 # input noise for the generator
@@ -83,8 +103,7 @@ def get_images():
                     final_imgs = srgan.generator.predict(gen_imgs)
 
                 final_imgs = 0.5 * final_imgs + 0.5
-                scipy.misc.imsave(os.path.join(app.static_folder, 'final-images') + str(i) + '.jpg', final_imgs[0])
+                scipy.misc.imsave(os.path.join(app.static_folder, 'final-images/') + str(i) + '.jpg', final_imgs[0])
+                print(str(i) + ".jpg created and saved.")
 
-    dirLen = len([name for name in os.listdir(os.path.join(app.static_folder, 'final-images')) if os.path.isfile(name)])
-
-    return render_template("display.html", number = dirLen)
+    return redirect(url_for('models.get_image_display'))

@@ -35,33 +35,19 @@
     <div class="agile_wthree_inner_grids">
       <div class="agile_port_w3ls_info">
         <div class="col-md-6 agile_gallery_grid_left">
+          {% for i in range(number1) %}
           <div class="col-md-6 agile_gallery_grid">
-            <img src="{{ url_for('static' , filename='final-images/0.jpg') }}" data-darkbox="{{ url_for('static' , filename='final-images/0.jpg') }}" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
+            <img src="{{ url_for('static' , filename='final-images/' + filenames[i]) }}" data-darkbox="{{ url_for('static' , filename='final-images/' + filenames[i]) }}" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
           </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="{{ url_for('static' , filename='final-images/1.jpg') }}" data-darkbox="{{ url_for('static' , filename='final-images/1.jpg') }}" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="{{ url_for('static' , filename='final-images/2.jpg') }}" data-darkbox="{{ url_for('static' , filename='final-images/2.jpg') }}" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="{{ url_for('static' , filename='final-images/3.jpg') }}" data-darkbox="{{ url_for('static' , filename='final-images/3.jpg') }}" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
+          {% endfor %}
         </div>
 
           <div class="col-md-6 agile_gallery_grid_left">
+          {% for i in range(number1, number2) %}
           <div class="col-md-6 agile_gallery_grid">
-            <img src="{{ url_for('static' , filename='final-images/4.jpg') }}" data-darkbox="{{ url_for('static' , filename='final-images/4.jpg') }}" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
+            <img src="{{ url_for('static' , filename='final-images/' + filenames[i]) }}" data-darkbox="{{ url_for('static' , filename='final-images/' + filenames[i]) }}" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
           </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="{{ url_for('static' , filename='final-images/5.jpg') }}" data-darkbox="{{ url_for('static' , filename='final-images/5.jpg') }}" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="{{ url_for('static' , filename='final-images/6.jpg') }}" data-darkbox="{{ url_for('static' , filename='final-images/6.jpg') }}" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
-          <div class="col-md-6 agile_gallery_grid">
-            <img src="{{ url_for('static' , filename='final-images/7.jpg') }}" data-darkbox="{{ url_for('static' , filename='final-images/7.jpg') }}" data-darkbox-description="<b>Add Short description</b><br>Lorem ipsum dolor sit amet">
-          </div>
+          {% endfor %}
         </div>
       </div>
         <div class="clearfix"> </div>

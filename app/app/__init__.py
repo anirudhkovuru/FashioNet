@@ -11,6 +11,8 @@ from functools import wraps
 # Define the WSGI application object
 app = Flask(__name__, static_url_path="/static")
 
+# Configuring the static folder
+app.config['STATIC_FOLDER'] = 'static'
 
 # Configurations
 app.config.update(
