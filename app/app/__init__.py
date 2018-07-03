@@ -1,11 +1,13 @@
+# Import all flask related functions
 from flask import Flask, render_template, session, jsonify
 
 # Import SQLAlchemy
 from flask_sqlalchemy import SQLAlchemy
 
-#Import flask_mail
+# Import flask_mail
 from flask_mail import Mail, Message
 
+# Import wraps for authentication of users
 from functools import wraps
 
 # Define the WSGI application object
@@ -25,8 +27,10 @@ app.config.update(
 	)
 mail = Mail(app)
 
+# Configurations
 app.config.from_object('config')
 
+# Configurations for SQLAlchemy
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Define the database object which is imported
@@ -38,6 +42,7 @@ db = SQLAlchemy(app)
 def not_found(error):
    return render_template('index.html'), 200
 
+# Authentication functionality
 def requires_auth(f):
     @wraps(f)
     def decorated(*args, **kwargs):
@@ -47,8 +52,6 @@ def requires_auth(f):
     return decorated
 
 # Import a module / component using its blueprint handler variable (mod_auth)
-
-
 #ONLY HAVE TO ADD LINES TO NEXT TO PARAS AS WE ADD OBJECTS
 from app.server.api.controllers import mod_models
 
