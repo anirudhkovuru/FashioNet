@@ -1,7 +1,7 @@
 # Web Application
 
 ## Running the server
-To run the server, run the command: \
+To run the server, run the command: 
 
 > python3 run.py
 
