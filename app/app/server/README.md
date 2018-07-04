@@ -54,3 +54,44 @@ The generator consists of residual block modules and upsampling using deconvolut
 \
 We based ours off of the following implementation.\
 [SRGAN implementation in keras](https://github.com/eriklindernoren/Keras-GAN/tree/master/srgan)
+
+## Training the models on Google Colaboratory
+- Create a new notebook via **Right click > More > Colaboratory**. Rename notebook by means of clicking the file name.
+![Opening a Colab notebook](./display-images/first-step.jpeg)
+- We can alter the default hardware (CPU to GPU or vice versa); just follow **Edit > Notebook settings** or **Runtime>Change runtime type** and **select GPU** as **Hardware accelerator**.
+![Setting the runtime type](./display-images/second-step.png)
+- We need to run these codes first in order to install the necessary libraries and perform authorization.
+
+> !apt-get install -y -qq software-properties-common python-software-properties module-init-tools
+> !add-apt-repository -y ppa:alessandro-strada/ppa 2>&1 > /dev/null
+> !apt-get update -qq 2>&1 > /dev/null
+> !apt-get -y install -qq google-drive-ocamlfuse fuse
+> from google.colab import auth
+> auth.authenticate_user()
+> from oauth2client.client import GoogleCredentials
+> creds = GoogleCredentials.get_application_default()
+> import getpass
+> !google-drive-ocamlfuse -headless -id={creds.client_id} -secret={creds.client_secret} < /dev/null 2>&1 | grep URL
+> vcode = getpass.getpass()
+> !echo {vcode} | google-drive-ocamlfuse -headless -id={creds.client_id} -secret={creds.client_secret}
+
+- When you run the code above, you should see a result like in the image below. **Click** the link, **copy** the verification code and **paste** it into text box.
+![Setting the runtime type](./display-images/third-step.png)
+- After completion of the authorization process, mount your **Google Drive**:
+
+> !mkdir -p drive
+> !google-drive-ocamlfuse drive
+
+- Install any python libraries as shown in the below example with keras:
+
+> !pip install -q keras
+
+- Upload the python files onto drive and run the code as shown below. The path to the python file should start from drive onwards. Ex:- "drive/app/mnist.py" if you have an app folder in your root with mnist.py
+
+> !python3 <path to python file>
+
+**Note: Within the code any references made to other files must be made such that their path is mentioned
+from the drive folder. \
+Ex:-
+scipy.misc.imsave('../../dc-images/' + str(i) + '.jpg', gen_imgs[0])  [Wrong] \
+scipy.misc.imsave('drive/ZML/FashioNet/dc-images/' + str(i) + '.jpg', gen_imgs[0]) [Correct]**
