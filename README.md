@@ -27,4 +27,4 @@ In this step, the web interface for the images is provided. Images are generated
 The user can request the generation of more images.
 The user can also download images which he likes and wishes to use for brainstorming new designs.\
 The web based framework of this application is built in python using the **flask** library along with html and javascript.\
-[More info](./app/app)
+[More info](./app)
