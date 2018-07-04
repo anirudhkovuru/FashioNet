@@ -56,10 +56,12 @@ We based ours off of the following implementation.\
 [SRGAN implementation in keras](https://github.com/eriklindernoren/Keras-GAN/tree/master/srgan)
 
 ## Training the models on Google Colaboratory
-- Create a new notebook via **Right click > More > Colaboratory**. Rename notebook by means of clicking the file name.
+- Create a new notebook via **Right click > More > Colaboratory**. Rename notebook by means of clicking the file name.\
 ![Opening a Colab notebook](./display-images/first-step.jpeg)
-- We can alter the default hardware (CPU to GPU or vice versa); just follow **Edit > Notebook settings** or **Runtime>Change runtime type** and **select GPU** as **Hardware accelerator**.
+ \
+- We can alter the default hardware (CPU to GPU or vice versa); just follow **Edit > Notebook settings** or **Runtime>Change runtime type** and **select GPU** as **Hardware accelerator**.\
 ![Setting the runtime type](./display-images/second-step.png)
+ \
 - We need to run these codes first in order to install the necessary libraries and perform authorization.
 
 > !apt-get install -y -qq software-properties-common python-software-properties module-init-tools
@@ -75,8 +77,9 @@ We based ours off of the following implementation.\
 > vcode = getpass.getpass()
 > !echo {vcode} | google-drive-ocamlfuse -headless -id={creds.client_id} -secret={creds.client_secret}
 
-- When you run the code above, you should see a result like in the image below. **Click** the link, **copy** the verification code and **paste** it into text box.
+- When you run the code above, you should see a result like in the image below. **Click** the link, **copy** the verification code and **paste** it into text box.\
 ![Setting the runtime type](./display-images/third-step.png)
+ \
 - After completion of the authorization process, mount your **Google Drive**:
 
 > !mkdir -p drive
@@ -88,10 +91,10 @@ We based ours off of the following implementation.\
 
 - Upload the python files onto drive and run the code as shown below. The path to the python file should start from drive onwards. Ex:- "drive/app/mnist.py" if you have an app folder in your root with mnist.py
 
-> !python3 <path to python file>
+> !python3 drive/app/mnist.py
 
 **Note: Within the code any references made to other files must be made such that their path is mentioned
 from the drive folder. \
-Ex:-
+Ex:- \
 scipy.misc.imsave('../../dc-images/' + str(i) + '.jpg', gen_imgs[0])  [Wrong] \
 scipy.misc.imsave('drive/ZML/FashioNet/dc-images/' + str(i) + '.jpg', gen_imgs[0]) [Correct]**
